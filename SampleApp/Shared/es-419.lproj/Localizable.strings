@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  LocalizableLintSample
+
+  Created by Samuel Lagunes on 12/4/20.
+*/
+
+"DISH_NAME_LABEL" = "Nombre";
+"INGREDIENTS_LABEL" = "Ingredientes";
+
+"DEAD_KEY_SPA" ="Hello there";
+"DEAD_KEY" = "Alo";
+
+"DESCRIPTION_LABEL" = "Descripcion";
