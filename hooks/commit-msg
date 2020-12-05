@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+commit_message_file = ARGV[0]
+commit_message = File.read(commit_message_file)
+$regex = /^(revert: )?(chore|feat|fix|docs|test|style|refactor)(\(.+\))?: .{1,120}/
+
+if !$regex.match(commit_message)
+    puts "$: Commit message:"
+    puts "#{commit_message}"
+    puts "$: Does not match: \"#{regex}\""
+    exit 1
+end
