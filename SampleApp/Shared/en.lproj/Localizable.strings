@@ -5,8 +5,11 @@
   Created by Samuel Lagunes on 12/4/20.
 */
 
-"DEAD_KEY_ENG" = "Hello there";
-"DEAD_KEY" = "Alo";
+"DISH_NAME_LABEL" = "Name";
 "DISH_NAME_LABEL" = "Name";
 "INGREDIENTS_LABEL" = "Ingredients";
 "DESCRIPTION_LABEL" = "Description";
+"DESCRIPTION_LABEL" = "Description";
+
+/* Coupon Message */
+"PRICE_LABEL" = "Price";

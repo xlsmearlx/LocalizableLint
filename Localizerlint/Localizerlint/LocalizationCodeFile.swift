@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct LocalizationCodeFile: Pathable {
+/// <#Description#>
+struct LocalizationCodeFile {
     let path: String
     let keys: Set<String>
 }

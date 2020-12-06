@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct LocalizationStringsFile: Pathable {
+/// <#Description#>
+struct LocalizedStringsFile {
     let path: String
     let kv: [String: String]
 
@@ -15,15 +16,16 @@ struct LocalizationStringsFile: Pathable {
         return Array(kv.keys)
     }
 
-    init(path: String) {
+    init(path: String, kv: [String: String]) {
         self.path = path
-        self.kv = FileReader.parse(path)
+        self.kv = kv
     }
 
     /// Writes back to localizable file with sorted keys and removed whitespaces and new lines
     func cleanWrite() {
-        print("Formatting file: \(path)")
+        Logger.print(log: BuildLog(message: "Formatting file: \(path)", type: .message))
         let content = kv.keys.sorted().map { "\($0) = \(kv[$0]!);" }.joined(separator: "\n")
         try! content.write(toFile: path, atomically: true, encoding: .utf8)
     }
 }
+

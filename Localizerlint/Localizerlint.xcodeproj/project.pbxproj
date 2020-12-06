@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		BA82E0102579EC800009853A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E00F2579EC800009853A /* main.swift */; };
-		BA82E0182579ECAE0009853A /* core.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E0172579ECAE0009853A /* core.swift */; };
 		BA82E01F257A804E0009853A /* String+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E01E257A804E0009853A /* String+Whitespaces.swift */; };
 		BA82E023257A8FE30009853A /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = BA82E022257A8FE30009853A /* ArgumentParser */; };
 		BA82E027257A99BD0009853A /* DirectoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E026257A99BD0009853A /* DirectoryHelper.swift */; };
 		BA82E02A257A9B920009853A /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E029257A9B920009853A /* FileReader.swift */; };
 		BA82E02D257A9C550009853A /* FileAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E02C257A9C550009853A /* FileAnalyzer.swift */; };
-		BA82E030257A9D930009853A /* LocalizationStringsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E02F257A9D930009853A /* LocalizationStringsFile.swift */; };
 		BA82E033257A9DAA0009853A /* LocalizationCodeFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E032257A9DAA0009853A /* LocalizationCodeFile.swift */; };
-		BA82E036257A9DD20009853A /* Pathable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E035257A9DD20009853A /* Pathable.swift */; };
-		BA82E284257BD9EC0009853A /* FileReaderOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E283257BD9EC0009853A /* FileReaderOptions.swift */; };
+		BA82E289257C1BC50009853A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E288257C1BC50009853A /* Logger.swift */; };
+		BA82E2C3257D44840009853A /* LocalizationStringsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E2C2257D44840009853A /* LocalizationStringsFile.swift */; };
+		BA82E2C7257DACE90009853A /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E2C6257DACE90009853A /* Loggable.swift */; };
+		BA82E2CA257DACFC0009853A /* BuildLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E2C9257DACFC0009853A /* BuildLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,17 +33,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BA82E00C2579EC7F0009853A /* LocalizableLint */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LocalizableLint; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA82E00C2579EC7F0009853A /* Localizerlint */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Localizerlint; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA82E00F2579EC800009853A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		BA82E0172579ECAE0009853A /* core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = core.swift; sourceTree = "<group>"; };
 		BA82E01E257A804E0009853A /* String+Whitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Whitespaces.swift"; sourceTree = "<group>"; };
 		BA82E026257A99BD0009853A /* DirectoryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryHelper.swift; sourceTree = "<group>"; };
 		BA82E029257A9B920009853A /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		BA82E02C257A9C550009853A /* FileAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAnalyzer.swift; sourceTree = "<group>"; };
-		BA82E02F257A9D930009853A /* LocalizationStringsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationStringsFile.swift; sourceTree = "<group>"; };
 		BA82E032257A9DAA0009853A /* LocalizationCodeFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationCodeFile.swift; sourceTree = "<group>"; };
-		BA82E035257A9DD20009853A /* Pathable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pathable.swift; sourceTree = "<group>"; };
-		BA82E283257BD9EC0009853A /* FileReaderOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderOptions.swift; sourceTree = "<group>"; };
+		BA82E288257C1BC50009853A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		BA82E2C2257D44840009853A /* LocalizationStringsFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationStringsFile.swift; sourceTree = "<group>"; };
+		BA82E2C6257DACE90009853A /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
+		BA82E2C9257DACFC0009853A /* BuildLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		BA82E0032579EC7F0009853A = {
 			isa = PBXGroup;
 			children = (
-				BA82E00E2579EC800009853A /* LocalizableLint */,
+				BA82E00E2579EC800009853A /* Localizerlint */,
 				BA82E00D2579EC800009853A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,29 +69,28 @@
 		BA82E00D2579EC800009853A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA82E00C2579EC7F0009853A /* LocalizableLint */,
+				BA82E00C2579EC7F0009853A /* Localizerlint */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BA82E00E2579EC800009853A /* LocalizableLint */ = {
+		BA82E00E2579EC800009853A /* Localizerlint */ = {
 			isa = PBXGroup;
 			children = (
+				BA82E00F2579EC800009853A /* main.swift */,
 				BA82E025257A99760009853A /* Sources */,
 				BA82E01D257A803E0009853A /* Utils */,
-				BA82E00F2579EC800009853A /* main.swift */,
-				BA82E0172579ECAE0009853A /* core.swift */,
 			);
-			path = LocalizableLint;
+			path = Localizerlint;
 			sourceTree = "<group>";
 		};
 		BA82E01D257A803E0009853A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BA82E2C5257DACD40009853A /* Logger */,
 				BA82E01E257A804E0009853A /* String+Whitespaces.swift */,
 				BA82E026257A99BD0009853A /* DirectoryHelper.swift */,
 				BA82E029257A9B920009853A /* FileReader.swift */,
-				BA82E283257BD9EC0009853A /* FileReaderOptions.swift */,
 				BA82E02C257A9C550009853A /* FileAnalyzer.swift */,
 			);
 			name = Utils;
@@ -100,19 +99,28 @@
 		BA82E025257A99760009853A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BA82E02F257A9D930009853A /* LocalizationStringsFile.swift */,
+				BA82E2C2257D44840009853A /* LocalizationStringsFile.swift */,
 				BA82E032257A9DAA0009853A /* LocalizationCodeFile.swift */,
-				BA82E035257A9DD20009853A /* Pathable.swift */,
 			);
 			name = Sources;
+			sourceTree = "<group>";
+		};
+		BA82E2C5257DACD40009853A /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				BA82E288257C1BC50009853A /* Logger.swift */,
+				BA82E2C6257DACE90009853A /* Loggable.swift */,
+				BA82E2C9257DACFC0009853A /* BuildLog.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BA82E00B2579EC7F0009853A /* LocalizableLint */ = {
+		BA82E00B2579EC7F0009853A /* Localizerlint */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA82E0132579EC800009853A /* Build configuration list for PBXNativeTarget "LocalizableLint" */;
+			buildConfigurationList = BA82E0132579EC800009853A /* Build configuration list for PBXNativeTarget "Localizerlint" */;
 			buildPhases = (
 				BA82E0082579EC7F0009853A /* Sources */,
 				BA82E0092579EC7F0009853A /* Frameworks */,
@@ -122,12 +130,12 @@
 			);
 			dependencies = (
 			);
-			name = LocalizableLint;
+			name = Localizerlint;
 			packageProductDependencies = (
 				BA82E022257A8FE30009853A /* ArgumentParser */,
 			);
 			productName = LocalizableLint;
-			productReference = BA82E00C2579EC7F0009853A /* LocalizableLint */;
+			productReference = BA82E00C2579EC7F0009853A /* Localizerlint */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -144,7 +152,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BA82E0072579EC7F0009853A /* Build configuration list for PBXProject "LocalizableLint" */;
+			buildConfigurationList = BA82E0072579EC7F0009853A /* Build configuration list for PBXProject "Localizerlint" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -160,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA82E00B2579EC7F0009853A /* LocalizableLint */,
+				BA82E00B2579EC7F0009853A /* Localizerlint */,
 			);
 		};
 /* End PBXProject section */
@@ -170,15 +178,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA82E0182579ECAE0009853A /* core.swift in Sources */,
+				BA82E2C3257D44840009853A /* LocalizationStringsFile.swift in Sources */,
+				BA82E2CA257DACFC0009853A /* BuildLog.swift in Sources */,
 				BA82E033257A9DAA0009853A /* LocalizationCodeFile.swift in Sources */,
 				BA82E02A257A9B920009853A /* FileReader.swift in Sources */,
-				BA82E036257A9DD20009853A /* Pathable.swift in Sources */,
 				BA82E027257A99BD0009853A /* DirectoryHelper.swift in Sources */,
-				BA82E284257BD9EC0009853A /* FileReaderOptions.swift in Sources */,
+				BA82E289257C1BC50009853A /* Logger.swift in Sources */,
 				BA82E01F257A804E0009853A /* String+Whitespaces.swift in Sources */,
-				BA82E030257A9D930009853A /* LocalizationStringsFile.swift in Sources */,
 				BA82E0102579EC800009853A /* main.swift in Sources */,
+				BA82E2C7257DACE90009853A /* Loggable.swift in Sources */,
 				BA82E02D257A9C550009853A /* FileAnalyzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,7 +330,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA82E0072579EC7F0009853A /* Build configuration list for PBXProject "LocalizableLint" */ = {
+		BA82E0072579EC7F0009853A /* Build configuration list for PBXProject "Localizerlint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA82E0112579EC800009853A /* Debug */,
@@ -331,7 +339,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA82E0132579EC800009853A /* Build configuration list for PBXNativeTarget "LocalizableLint" */ = {
+		BA82E0132579EC800009853A /* Build configuration list for PBXNativeTarget "Localizerlint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA82E0142579EC800009853A /* Debug */,
