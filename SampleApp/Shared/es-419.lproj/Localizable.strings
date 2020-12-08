@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  LocalizableLintSample
+
+  Created by Samuel Lagunes on 12/4/20.
+*/
+
+"DISH_NAME_LABEL" = "Nombre";
+"INGREDIENTS_LABEL" = "Ingredientes";
+"DESCRIPTION_LABEL" = "Descripcion";
+
+/* Coupon Message */
+"PRICE_LABEL" = "Precio";
+
