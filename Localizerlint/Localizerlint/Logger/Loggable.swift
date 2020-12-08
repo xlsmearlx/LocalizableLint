@@ -1,6 +1,6 @@
 //
 //  Loggable.swift
-//  LocalizableLint
+//  Localizerlint
 //
 //  Created by Samuel Lagunes on 12/6/20.
 //

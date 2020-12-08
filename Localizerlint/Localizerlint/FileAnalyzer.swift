@@ -1,6 +1,6 @@
 //
 //  FileAnalyzer.swift
-//  LocalizableLint
+//  Localizerlint
 //
 //  Created by Samuel Lagunes on 12/4/20.
 //

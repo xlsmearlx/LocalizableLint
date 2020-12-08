@@ -1,6 +1,6 @@
 //
 //  DirectoryHelper.swift
-//  LocalizableLint
+//  Localizerlint
 //
 //  Created by Samuel Lagunes on 12/4/20.
 //
@@ -28,11 +28,11 @@ final class DirectoryHelper {
     
     /// List of localizable files - not including Localizable files in the Pods
     var localizableFiles: [String] {
-        Logger.print(log: BuildLog(message: "------------ Searching for localization files ------------", type: .message))
+        Logger.print(log: BuildLog(message: "Searching for localization files", type: .message))
         let localizationFiles = pathFiles.filter { $0.hasSuffix(".strings") && !$0.contains("Pods") }
         
         if options.contains(.verbose) {
-            Logger.print(log: BuildLog(message: "------------ Available localizable files \(localizationFiles.count) ------------", type: .message))
+            Logger.print(log: BuildLog(message: "Available localizable files \(localizationFiles.count)", type: .message))
             localizationFiles.forEach({ Logger.print(log: BuildLog(message: $0, type: .message)) })
         }
         
@@ -41,7 +41,7 @@ final class DirectoryHelper {
     
     /// List of executable files
     var executableFiles: [String] {
-        Logger.print(log: BuildLog(message: "------------ Searching for source files ------------", type: .message))
+        Logger.print(log: BuildLog(message: "Searching for source files", type: .message))
         let paths = pathFiles.filter {
             if options.contains(.objectivec) {
                 return !$0.localizedCaseInsensitiveContains("test") && (NSString(string: $0).pathExtension == "swift" || NSString(string: $0).pathExtension == "m")
@@ -51,7 +51,7 @@ final class DirectoryHelper {
         }
         
         if options.contains(.verbose) {
-            Logger.print(log: BuildLog(message: "------------ Available source files \(paths.count) ------------", type: .message))
+            Logger.print(log: BuildLog(message: "Available source files \(paths.count)", type: .message))
             paths.forEach({ Logger.print(log: BuildLog(message: $0, type: .message)) })
         }
         

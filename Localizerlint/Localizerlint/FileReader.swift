@@ -1,6 +1,6 @@
 //
 //  FileReader.swift
-//  LocalizableLint
+//  Localizerlint
 //
 //  Created by Samuel Lagunes on 12/4/20.
 //
@@ -51,7 +51,7 @@ struct FileReader {
                 abort()
             }
             
-            Logger.print(log: BuildLog(message: "Validating for duplicate keys in file: \(path)", type: .message))
+            Logger.print(log: BuildLog(message: "Searching for duplicate keys in file: \(path)", type: .message))
             
             let linesContent = rawContent.components(separatedBy: "\n")
             var logs = [BuildLog]()

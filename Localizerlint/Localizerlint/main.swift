@@ -1,23 +1,12 @@
-////
+//
 //  main.swift
-//  LocalizableLint
+//  Localizerlint
 //
 //  Created by Samuel Lagunes on 12/3/20.
 //
 
 import Foundation
 import ArgumentParser
-
-#if DEBUG
-//CommandLine.arguments.append("-h")
-//CommandLine.arguments.append("/Users/slagunes/Developer/Localizerlint/SampleApp/")
-//CommandLine.arguments.append("--search-duplicates-only")
-//CommandLine.arguments.append("--brute-force")
-//CommandLine.arguments.append("--inclue-swift-ui")
-//CommandLine.arguments.append("--include-objective-c")
-//CommandLine.arguments.append("--strict")
-//CommandLine.arguments.append("--verbose")
-#endif
 
 struct Localizerlint: ParsableCommand {
     @Argument(wrappedValue: "\(FileManager.default.currentDirectoryPath)/", help: "The root path of the project")
@@ -52,7 +41,7 @@ struct Localizerlint: ParsableCommand {
         }
         
         if verbose {
-            Logger.print(log: BuildLog(message: "Analying path: \(path)", type: .message))
+            Logger.print(log: BuildLog(message: "Path: \(path)", type: .message))
             Logger.print(log: BuildLog(message: "Brute force enabled: \(options.contains(.bruteForce))", type: .message))
             Logger.print(log: BuildLog(message: "SwiftUI enabled: \(options.contains(.swiftui))", type: .message))
             Logger.print(log: BuildLog(message: "Objective-C enabled: \(options.contains(.objectivec))", type: .message))
@@ -63,7 +52,6 @@ struct Localizerlint: ParsableCommand {
         let directory = DirectoryHelper(path: path, options: options)
         let stringsPaths = directory.localizableFiles
         let sourcePaths = directory.executableFiles
-        
         
         let stringFiles = FileReader.readFiles(filePaths: stringsPaths, options: options)
         
@@ -78,7 +66,6 @@ struct Localizerlint: ParsableCommand {
             }
             
             FileAnalyzer.evaluateKeys(codeFiles: localizedKeysInCode, localizationFiles: stringFiles, options: options)
-            
         }
     }
 }

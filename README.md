@@ -2,8 +2,25 @@
 
 #### This command line tool helps in the search for unused and duplicated localization strings in Xcode projects.
 
-## Usage
+## Installation
 
+### Using [CocoaPods](https://cocoapods.org):
+
+Add the following line to your Podfile:
+
+```
+pod 'Localizerlint'
+```
+
+This will download the Localizerlint binaries and dependencies in `Pods/` during your next `pod install` execution and will allow you to invoke it via `${PODS_ROOT}/Localizerlint/localizerlint` in your Script Build Phases.
+
+
+### Using a pre-built package:
+
+You can also install LocalizerLint by downloading `localizerlint.zip` from the
+[latest GitHub release](https://github.com/xlsmearlx/LocalizableLint/releases/latest) and running it.
+
+## Usage
 
 	USAGE: localizerlint [<path>] [--search-duplicates-only] [--inclue-swift-ui] [--include-objective-c] [--brute-force] [--strict] [--verbose]
 
@@ -42,7 +59,7 @@ Validating for duplicate keys in file: /SampleApp/Shared/en.lproj/Localizable.st
 ##### Find unused and duplicate strings
 
 ```
-$localizerlint Project_Directory/ --search-duplicates-only
+$localizerlint Project_Directory/
 
 Validating for duplicate keys in file: /SampleApp/Shared/en.lproj/Localizable.strings
 
@@ -52,8 +69,8 @@ Validating for duplicate keys in file: /SampleApp/Shared/en.lproj/Localizable.st
 
 Validating for duplicate keys in file: /SampleApp/Shared/es-419.lproj/Localizable.strings
 
-KEYS: 3 | DEADKEYS: 0 | /Users/slagunes/Developer/Localizerlint/SampleApp/Shared/en.lproj/Localizable.strings
-KEYS: 5 | DEADKEYS: 2 | /Users/slagunes/Developer/Localizerlint/SampleApp/Shared/es-419.lproj/Localizable.strings
+KEYS: 3 | DEADKEYS: 0 | /SampleApp/Shared/en.lproj/Localizable.strings
+KEYS: 5 | DEADKEYS: 2 | /SampleApp/Shared/es-419.lproj/Localizable.strings
 
 Searching for unused keys
 
@@ -92,13 +109,20 @@ struct ContentView: View {
 }
 ```
 
+## Xcode Integration
 
-##### Xcode Integration
+##### This tool is designed to be used as part of Xcode's Build. To integrate it just add a new `run script` phase 
 
-This tool is designed to be used as part of Xcode's Build. To integrate it just add a new `run script` phase 
+>${SRCROOT}/Localizerlint
 
 ![add_build_phase](readme_files/xcode_build_phase.png)
 
-After the tools is done searching for unused and duplicated keys, Xcode will display the violations.
+##### If using with **CocoaPods**
+
+>${PODS_ROOT}/Localizerlint/localizerlint
+
+![add_build_phase](readme_files/xcode_build_phase_pod.png)
+
+##### After the tools is done searching for unused and duplicated keys, Xcode will display the violations.
 
 ![xcode_build_log](readme_files/xcode_build_log.png)
