@@ -1,6 +1,11 @@
-## localizerlint
+## LocalizerLint
 
 #### This command line tool helps in the search for unused and duplicated localization strings in Xcode projects.
+
+[![GitHub license](https://img.shields.io/github/license/xlsmearlx/LocalizableLint)](https://github.com/xlsmearlx/LocalizableLint/blob/main/LICENSE) 
+[![GitHub issues](https://img.shields.io/github/issues/xlsmearlx/LocalizableLint)](https://github.com/xlsmearlx/LocalizableLint/issues) 
+![Cocoapods](https://img.shields.io/cocoapods/v/Localizerlint)
+![Cocoapods platforms](https://img.shields.io/cocoapods/p/Localizerlint)
 
 ## Installation
 
