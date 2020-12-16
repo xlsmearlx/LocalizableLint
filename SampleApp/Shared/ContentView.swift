@@ -9,22 +9,34 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    @State var dishes: [Dish] = [.init(name: "Barbacoa")]
+    
+    /*
+     * DESCRIPTION_LABEL and NAME_LABEL will throw false positive
+     * because they are not using localizedString syntax.
+     * for this scenarios enable brute force.
+     */
+    @State var kvs: [LocalizedKeyView] = [.init(key: "DESCRIPTION_LABEL"),
+                                          .init(key: "NAME_LABEL")]
     
     var body: some View {
-        List(dishes) { dish in
-            VStack {
+        VStack {
+            Text("AVAILABLE_LABEL")
+            HStack {
+                Spacer()
+                Text(Bundle.main.localizedString(forKey: "KEY_LABEL", value: .none, table: .none))
+                Spacer()
+                Text(NSLocalizedString("VALUE_LABEL", comment: ""))
+                Spacer()
+            }
+            List(kvs) { kv in
                 HStack {
-                    Text(Bundle.main.localizedString(forKey: "DISH_NAME_LABEL", value: "", table: nil))
-                    Text(dish.name).padding()
-                }
-                
-                HStack {
-                    Text("INGREDIENTS_LABEL")
-                    Text(dish.name).padding()
+                    Spacer()
+                    Text(kv.key)
+                    Spacer()
+                    Text(kv.value).padding()
+                    Spacer()
                 }
             }
-            
         }
 
     }

@@ -15,8 +15,8 @@
 		BA82E079257AE01C0009853A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E04E257AE0190009853A /* ContentView.swift */; };
 		BA82E07A257AE01C0009853A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA82E04F257AE01B0009853A /* Assets.xcassets */; };
 		BA82E07B257AE01C0009853A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA82E04F257AE01B0009853A /* Assets.xcassets */; };
-		BA82E0F8257AE4E40009853A /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E0F7257AE4E40009853A /* Dish.swift */; };
-		BA82E0F9257AE4E40009853A /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E0F7257AE4E40009853A /* Dish.swift */; };
+		BA82E0F8257AE4E40009853A /* LocalizedKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E0F7257AE4E40009853A /* LocalizedKeyView.swift */; };
+		BA82E0F9257AE4E40009853A /* LocalizedKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E0F7257AE4E40009853A /* LocalizedKeyView.swift */; };
 		BA82E0FE257AE7770009853A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA82E101257AE7770009853A /* Localizable.strings */; };
 		BA82E0FF257AE7770009853A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA82E101257AE7770009853A /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -53,7 +53,7 @@
 		BA82E06F257AE01C0009853A /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA82E073257AE01C0009853A /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		BA82E075257AE01C0009853A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA82E0F7257AE4E40009853A /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		BA82E0F7257AE4E40009853A /* LocalizedKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedKeyView.swift; sourceTree = "<group>"; };
 		BA82E100257AE7770009853A /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BA82E102257AE77D0009853A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +107,7 @@
 			children = (
 				BA82E04D257AE0190009853A /* LocalizableLintSampleApp.swift */,
 				BA82E04E257AE0190009853A /* ContentView.swift */,
-				BA82E0F7257AE4E40009853A /* Dish.swift */,
+				BA82E0F7257AE4E40009853A /* LocalizedKeyView.swift */,
 				BA82E04F257AE01B0009853A /* Assets.xcassets */,
 				BA82E101257AE7770009853A /* Localizable.strings */,
 			);
@@ -241,7 +241,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					BA82E053257AE01B0009853A = {
 						CreatedOnToolsVersion = 12.2;
@@ -333,7 +333,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Localizerlint\"\n";
+			shellScript = "\"${SRCROOT}/Localizerlint\" --inclue-swift-ui\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -342,7 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA82E0F8257AE4E40009853A /* Dish.swift in Sources */,
+				BA82E0F8257AE4E40009853A /* LocalizedKeyView.swift in Sources */,
 				BA82E078257AE01C0009853A /* ContentView.swift in Sources */,
 				BA82E076257AE01C0009853A /* LocalizableLintSampleApp.swift in Sources */,
 			);
@@ -352,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA82E0F9257AE4E40009853A /* Dish.swift in Sources */,
+				BA82E0F9257AE4E40009853A /* LocalizedKeyView.swift in Sources */,
 				BA82E079257AE01C0009853A /* ContentView.swift in Sources */,
 				BA82E077257AE01C0009853A /* LocalizableLintSampleApp.swift in Sources */,
 			);
@@ -406,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -465,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -564,6 +566,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_PREVIEWS = YES;
@@ -586,6 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_PREVIEWS = YES;

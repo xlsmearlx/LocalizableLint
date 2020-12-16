@@ -5,10 +5,9 @@
   Created by Samuel Lagunes on 12/4/20.
 */
 
-"DISH_NAME_LABEL" = "Nombre";
-"INGREDIENTS_LABEL" = "Ingredientes";
+"NAME_LABEL" = "Nombre";
+"MESSAGE_LABEL" = "Mensage";
+"AVAILABLE_LABEL" = "Llaves Disponibles";
+"KEY_LABEL" = "Llave";
+"VALUE_LABEL" = "Valor";
 "DESCRIPTION_LABEL" = "Descripcion";
-
-/* Coupon Message */
-"PRICE_LABEL" = "Precio";
-

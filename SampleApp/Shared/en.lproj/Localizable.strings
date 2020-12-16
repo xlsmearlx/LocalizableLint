@@ -5,11 +5,10 @@
   Created by Samuel Lagunes on 12/4/20.
 */
 
-"DISH_NAME_LABEL" = "Name";
-"DISH_NAME_LABEL" = "Name";
-"INGREDIENTS_LABEL" = "Ingredients";
+"NAME_LABEL" = "Name";
+"MESSAGE_LABEL" = "Message";
+"AVAILABLE_LABEL" = "Available localized keys";
+"KEY_LABEL" = "Key";
+"VALUE_LABEL" = "Value";
 "DESCRIPTION_LABEL" = "Description";
 "DESCRIPTION_LABEL" = "Description";
-
-/* Coupon Message */
-"PRICE_LABEL" = "Price";
