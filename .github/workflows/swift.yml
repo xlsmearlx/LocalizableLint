@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches: [ main , dev]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: |
+       cd $GITHUB_WORKSPACE"/Localizerlint" 
+       xcodebuild build-for-testing -scheme "Localizerlint"  
+
+  test:
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: |
+       cd $GITHUB_WORKSPACE"/Localizerlint" 
+       xcodebuild test -scheme "LocalizerlintFramework"
+    - name: Codecov
+      uses: codecov/codecov-action@v1.0.15

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct LocalizedStringsFile {
+/// Container for ".strings" files localization keys and values
+public struct LocalizedStringsFile {
     let path: String
     let kv: [String: String]
 

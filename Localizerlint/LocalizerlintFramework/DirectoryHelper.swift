@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class DirectoryHelper {
+public final class DirectoryHelper {
     var path: String
-    var options: FileReader.FileReaderOptions
+    var options: FileReaderOptions
     
     /// List of files in currentPath - recursive
     lazy var pathFiles: [String] = {
@@ -21,26 +21,26 @@ final class DirectoryHelper {
         return files.map({path + $0})
     }()
     
-    init(path: String, options: FileReader.FileReaderOptions) {
+    public init(path: String, options: FileReaderOptions) {
         self.path = path
         self.options = options
     }
     
     /// List of localizable files - not including Localizable files in the Pods
-    var localizableFiles: [String] {
+    public var localizableFiles: [String] {
         Logger.print(log: BuildLog(message: "Searching for localization files", type: .message))
         let localizationFiles = pathFiles.filter { $0.hasSuffix(".strings") && !$0.contains("Pods") }
         
         if options.contains(.verbose) {
-            Logger.print(log: BuildLog(message: "Available localizable files \(localizationFiles.count)", type: .message))
-            localizationFiles.forEach({ Logger.print(log: BuildLog(message: $0, type: .message)) })
+            Logger.print(log: VerboseLog(message: "Available localizable files \(localizationFiles.count)"))
+            localizationFiles.forEach({ Logger.print(log: VerboseLog(message: $0)) })
         }
         
         return localizationFiles
     }
     
     /// List of executable files
-    var executableFiles: [String] {
+    public var executableFiles: [String] {
         Logger.print(log: BuildLog(message: "Searching for source files", type: .message))
         let paths = pathFiles.filter {
             if options.contains(.objectivec) {
@@ -51,8 +51,8 @@ final class DirectoryHelper {
         }
         
         if options.contains(.verbose) {
-            Logger.print(log: BuildLog(message: "Available source files \(paths.count)", type: .message))
-            paths.forEach({ Logger.print(log: BuildLog(message: $0, type: .message)) })
+            Logger.print(log: VerboseLog(message: "Available source files \(paths.count)"))
+            paths.forEach({ Logger.print(log: VerboseLog(message: $0)) })
         }
         
         return paths

@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Logger {
-    static func print(log: Loggable) {
+public struct Logger {
+    public static func print(log: Loggable) {
         Swift.print(log.description)
     }
     
-    static func print(logs: [Loggable]) {
+    public static func print(logs: [Loggable]) {
         logs.forEach({ Swift.print($0.description) })
     }
 }

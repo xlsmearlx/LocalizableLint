@@ -7,6 +7,10 @@
 
 import Foundation
 import ArgumentParser
+import LocalizerlintFramework
+
+CommandLine.arguments.append("/Users/slagunes/Developer/Localizerlint/SampleApp/")
+CommandLine.arguments.append("--verbose")
 
 struct Localizerlint: ParsableCommand {
     @Argument(wrappedValue: "\(FileManager.default.currentDirectoryPath)/", help: "The root path of the project")
@@ -31,7 +35,7 @@ struct Localizerlint: ParsableCommand {
     var verbose = false
     
     mutating func run() throws {
-        var options:FileReader.FileReaderOptions = []
+        var options:FileReaderOptions = []
         
         if bruteForce {
             options.update(with: .bruteForce)
@@ -50,22 +54,30 @@ struct Localizerlint: ParsableCommand {
         }
         
         let directory = DirectoryHelper(path: path, options: options)
-        let stringsPaths = directory.localizableFiles
-        let sourcePaths = directory.executableFiles
         
-        let stringFiles = FileReader.readFiles(filePaths: stringsPaths, options: options)
-        
-        if !searchDuplicatesOnly {
-            Logger.print(log: BuildLog(message: "Searching for unused keys", type: .message))
+        do {
+            let stringFiles = try FileReader.readFiles(filePaths: directory.localizableFiles, options: options)
             
-            let localizedKeysInCode = FileReader.localizedStringsInCode(filePaths: sourcePaths, options: options)
-            
-            if verbose {
-                Logger.print(log: BuildLog(message: "Source files with localization: \(localizedKeysInCode.count)", type: .message))
-                Logger.print(log: BuildLog(message: "LocalizationFiles files: \(stringFiles.count)", type: .message))
+            if !searchDuplicatesOnly {
+                Logger.print(log: BuildLog(message: "Searching for unused keys", type: .message))
+                
+                let localizedKeysInCode = try FileReader.localizedStringsInCode(filePaths: directory.executableFiles, options: options)
+                
+                if verbose {
+                    Logger.print(log: BuildLog(message: "Source files with localization: \(localizedKeysInCode.count)", type: .message))
+                    Logger.print(log: BuildLog(message: "LocalizationFiles files: \(stringFiles.count)", type: .message))
+                }
+                
+                let logs = try FileReader.evaluateKeys(codeFiles: localizedKeysInCode, localizationFiles: stringFiles, options: options)
+                
+                if !logs.isEmpty {
+                    Logger.print(logs: logs)
+                    options.contains(.strict) ? abort() : nil
+                }
             }
-            
-            FileAnalyzer.evaluateKeys(codeFiles: localizedKeysInCode, localizationFiles: stringFiles, options: options)
+        } catch {
+            Logger.print(log: BuildLog(message: error.localizedDescription, type: .message))
+            abort()
         }
     }
 }

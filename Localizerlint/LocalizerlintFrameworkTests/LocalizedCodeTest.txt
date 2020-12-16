@@ -1,0 +1,13 @@
+//Using NSLocalizedString
+NSLocalizedString("DESCRIPTION_LABEL", comment: "comment for description")
+
+//Using Bundle
+Bundle.main.localizedString(forKey: "DISH_NAME_LABEL", value: "comment for name", table: nil)
+
+
+//UsingObjective-C
+[NSBundle.mainBundle localizedStringForKey: @"DISH_NAME_INGREDIENTS", value: @"comment for ingredients", table: nil];
+NSLocalizedString(@"DISH_ID", @"comment for dish id");
+
+//Using SwiftUI
+Text("DISH_AVAILABILITY")

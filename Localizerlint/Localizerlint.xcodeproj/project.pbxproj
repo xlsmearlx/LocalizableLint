@@ -7,20 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA1630412588390F00066062 /* LocalizerlintFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1630382588390F00066062 /* LocalizerlintFramework.framework */; };
+		BA1630482588390F00066062 /* LocalizerlintFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BA16303A2588390F00066062 /* LocalizerlintFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA1630572588393A00066062 /* BuildLogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1630562588393A00066062 /* BuildLogTest.swift */; };
+		BA16308025883D8200066062 /* FileReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16307F25883D8200066062 /* FileReaderTest.swift */; };
+		BA66C0162589376300618B04 /* LocalizationStringsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0082589376300618B04 /* LocalizationStringsFile.swift */; };
+		BA66C0172589376300618B04 /* LocalizationCodeFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0092589376300618B04 /* LocalizationCodeFile.swift */; };
+		BA66C0192589376300618B04 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C00C2589376300618B04 /* Logger.swift */; };
+		BA66C01A2589376300618B04 /* BuildLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C00D2589376300618B04 /* BuildLog.swift */; };
+		BA66C01B2589376300618B04 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C00E2589376300618B04 /* Loggable.swift */; };
+		BA66C01C2589376300618B04 /* DirectoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C00F2589376300618B04 /* DirectoryHelper.swift */; };
+		BA66C01D2589376300618B04 /* RegexEvaluatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0112589376300618B04 /* RegexEvaluatorError.swift */; };
+		BA66C01E2589376300618B04 /* RegexEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0122589376300618B04 /* RegexEvaluator.swift */; };
+		BA66C01F2589376300618B04 /* RegexPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0132589376300618B04 /* RegexPattern.swift */; };
+		BA66C0202589376300618B04 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0142589376300618B04 /* FileReader.swift */; };
+		BA66C0212589376300618B04 /* String+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0152589376300618B04 /* String+Whitespaces.swift */; };
+		BA66C0292589377000618B04 /* LocalizerlintFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1630382588390F00066062 /* LocalizerlintFramework.framework */; };
+		BA66C02A2589377000618B04 /* LocalizerlintFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA1630382588390F00066062 /* LocalizerlintFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA66C034258938F200618B04 /* FileReaderOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C033258938F200618B04 /* FileReaderOptions.swift */; };
+		BA66C038258938FF00618B04 /* FileReaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C037258938FF00618B04 /* FileReaderError.swift */; };
+		BA66C0462589512C00618B04 /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0452589512C00618B04 /* LogType.swift */; };
+		BA66C05625897C1300618B04 /* RegexEvaluatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C05525897C1300618B04 /* RegexEvaluatorTest.swift */; };
+		BA66C05A2589821C00618B04 /* LocalizedCodeTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = BA66C0592589821B00618B04 /* LocalizedCodeTest.txt */; };
+		BA66C05E258987B200618B04 /* StringExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C05D258987B200618B04 /* StringExtensionTest.swift */; };
+		BA66C0622589AA2900618B04 /* DirectoryHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0612589AA2900618B04 /* DirectoryHelperTest.swift */; };
+		BA66C0662589AB0200618B04 /* LocalizedFileTest.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA66C0652589AB0200618B04 /* LocalizedFileTest.strings */; };
+		BA66C070258A5AFD00618B04 /* FilesContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C06F258A5AFD00618B04 /* FilesContents.swift */; };
+		BA66C076258A67C500618B04 /* VerboseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C075258A67C500618B04 /* VerboseLog.swift */; };
+		BA66C07A258A67E000618B04 /* VerboseLogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C079258A67E000618B04 /* VerboseLogTest.swift */; };
 		BA82E0102579EC800009853A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E00F2579EC800009853A /* main.swift */; };
-		BA82E01F257A804E0009853A /* String+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E01E257A804E0009853A /* String+Whitespaces.swift */; };
 		BA82E023257A8FE30009853A /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = BA82E022257A8FE30009853A /* ArgumentParser */; };
-		BA82E027257A99BD0009853A /* DirectoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E026257A99BD0009853A /* DirectoryHelper.swift */; };
-		BA82E02A257A9B920009853A /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E029257A9B920009853A /* FileReader.swift */; };
-		BA82E02D257A9C550009853A /* FileAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E02C257A9C550009853A /* FileAnalyzer.swift */; };
-		BA82E033257A9DAA0009853A /* LocalizationCodeFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E032257A9DAA0009853A /* LocalizationCodeFile.swift */; };
-		BA82E289257C1BC50009853A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E288257C1BC50009853A /* Logger.swift */; };
-		BA82E2C3257D44840009853A /* LocalizationStringsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E2C2257D44840009853A /* LocalizationStringsFile.swift */; };
-		BA82E2C7257DACE90009853A /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E2C6257DACE90009853A /* Loggable.swift */; };
-		BA82E2CA257DACFC0009853A /* BuildLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E2C9257DACFC0009853A /* BuildLog.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BA1630422588390F00066062 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA82E0042579EC7F0009853A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA1630372588390F00066062;
+			remoteInfo = LocalizerlintFramework;
+		};
+		BA66C02B2589377000618B04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA82E0042579EC7F0009853A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA1630372588390F00066062;
+			remoteInfo = LocalizerlintFramework;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		BA66C02D2589377000618B04 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA66C02A2589377000618B04 /* LocalizerlintFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA82E00A2579EC7F0009853A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,24 +80,60 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA1630382588390F00066062 /* LocalizerlintFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LocalizerlintFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA16303A2588390F00066062 /* LocalizerlintFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizerlintFramework.h; sourceTree = "<group>"; };
+		BA16303B2588390F00066062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA1630402588390F00066062 /* LocalizerlintFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalizerlintFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1630472588390F00066062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA1630562588393A00066062 /* BuildLogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildLogTest.swift; sourceTree = "<group>"; };
+		BA16307F25883D8200066062 /* FileReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderTest.swift; sourceTree = "<group>"; };
+		BA66C0082589376300618B04 /* LocalizationStringsFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationStringsFile.swift; sourceTree = "<group>"; };
+		BA66C0092589376300618B04 /* LocalizationCodeFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationCodeFile.swift; sourceTree = "<group>"; };
+		BA66C00C2589376300618B04 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		BA66C00D2589376300618B04 /* BuildLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildLog.swift; sourceTree = "<group>"; };
+		BA66C00E2589376300618B04 /* Loggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
+		BA66C00F2589376300618B04 /* DirectoryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryHelper.swift; sourceTree = "<group>"; };
+		BA66C0112589376300618B04 /* RegexEvaluatorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexEvaluatorError.swift; sourceTree = "<group>"; };
+		BA66C0122589376300618B04 /* RegexEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexEvaluator.swift; sourceTree = "<group>"; };
+		BA66C0132589376300618B04 /* RegexPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexPattern.swift; sourceTree = "<group>"; };
+		BA66C0142589376300618B04 /* FileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
+		BA66C0152589376300618B04 /* String+Whitespaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Whitespaces.swift"; sourceTree = "<group>"; };
+		BA66C033258938F200618B04 /* FileReaderOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderOptions.swift; sourceTree = "<group>"; };
+		BA66C037258938FF00618B04 /* FileReaderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderError.swift; sourceTree = "<group>"; };
+		BA66C0452589512C00618B04 /* LogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
+		BA66C05525897C1300618B04 /* RegexEvaluatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexEvaluatorTest.swift; sourceTree = "<group>"; };
+		BA66C0592589821B00618B04 /* LocalizedCodeTest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalizedCodeTest.txt; sourceTree = "<group>"; };
+		BA66C05D258987B200618B04 /* StringExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTest.swift; sourceTree = "<group>"; };
+		BA66C0612589AA2900618B04 /* DirectoryHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryHelperTest.swift; sourceTree = "<group>"; };
+		BA66C0652589AB0200618B04 /* LocalizedFileTest.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = LocalizedFileTest.strings; sourceTree = "<group>"; };
+		BA66C06F258A5AFD00618B04 /* FilesContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesContents.swift; sourceTree = "<group>"; };
+		BA66C075258A67C500618B04 /* VerboseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerboseLog.swift; sourceTree = "<group>"; };
+		BA66C079258A67E000618B04 /* VerboseLogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerboseLogTest.swift; sourceTree = "<group>"; };
 		BA82E00C2579EC7F0009853A /* Localizerlint */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Localizerlint; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA82E00F2579EC800009853A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		BA82E01E257A804E0009853A /* String+Whitespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Whitespaces.swift"; sourceTree = "<group>"; };
-		BA82E026257A99BD0009853A /* DirectoryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryHelper.swift; sourceTree = "<group>"; };
-		BA82E029257A9B920009853A /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
-		BA82E02C257A9C550009853A /* FileAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAnalyzer.swift; sourceTree = "<group>"; };
-		BA82E032257A9DAA0009853A /* LocalizationCodeFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationCodeFile.swift; sourceTree = "<group>"; };
-		BA82E288257C1BC50009853A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		BA82E2C2257D44840009853A /* LocalizationStringsFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationStringsFile.swift; sourceTree = "<group>"; };
-		BA82E2C6257DACE90009853A /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
-		BA82E2C9257DACFC0009853A /* BuildLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BA1630352588390F00066062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA16303D2588390F00066062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1630412588390F00066062 /* LocalizerlintFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA82E0092579EC7F0009853A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA66C0292589377000618B04 /* LocalizerlintFramework.framework in Frameworks */,
 				BA82E023257A8FE30009853A /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,11 +141,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA1630392588390F00066062 /* LocalizerlintFramework */ = {
+			isa = PBXGroup;
+			children = (
+				BA66C00F2589376300618B04 /* DirectoryHelper.swift */,
+				BA66C0102589376300618B04 /* RegexEvaluator */,
+				BA66C032258938E600618B04 /* FileReader */,
+				BA66C03D25893DC700618B04 /* Source */,
+				BA66C00B2589376300618B04 /* Logger */,
+				BA66C04025893E1000618B04 /* Extensions */,
+				BA16303A2588390F00066062 /* LocalizerlintFramework.h */,
+				BA16303B2588390F00066062 /* Info.plist */,
+			);
+			path = LocalizerlintFramework;
+			sourceTree = "<group>";
+		};
+		BA1630442588390F00066062 /* LocalizerlintFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA66C0652589AB0200618B04 /* LocalizedFileTest.strings */,
+				BA66C0592589821B00618B04 /* LocalizedCodeTest.txt */,
+				BA66C06F258A5AFD00618B04 /* FilesContents.swift */,
+				BA1630562588393A00066062 /* BuildLogTest.swift */,
+				BA66C079258A67E000618B04 /* VerboseLogTest.swift */,
+				BA66C05D258987B200618B04 /* StringExtensionTest.swift */,
+				BA16307F25883D8200066062 /* FileReaderTest.swift */,
+				BA66C05525897C1300618B04 /* RegexEvaluatorTest.swift */,
+				BA66C0612589AA2900618B04 /* DirectoryHelperTest.swift */,
+				BA1630472588390F00066062 /* Info.plist */,
+			);
+			path = LocalizerlintFrameworkTests;
+			sourceTree = "<group>";
+		};
+		BA66C00B2589376300618B04 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				BA66C00E2589376300618B04 /* Loggable.swift */,
+				BA66C00C2589376300618B04 /* Logger.swift */,
+				BA66C00D2589376300618B04 /* BuildLog.swift */,
+				BA66C075258A67C500618B04 /* VerboseLog.swift */,
+				BA66C0452589512C00618B04 /* LogType.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		BA66C0102589376300618B04 /* RegexEvaluator */ = {
+			isa = PBXGroup;
+			children = (
+				BA66C0122589376300618B04 /* RegexEvaluator.swift */,
+				BA66C0132589376300618B04 /* RegexPattern.swift */,
+				BA66C0112589376300618B04 /* RegexEvaluatorError.swift */,
+			);
+			path = RegexEvaluator;
+			sourceTree = "<group>";
+		};
+		BA66C0282589377000618B04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA66C032258938E600618B04 /* FileReader */ = {
+			isa = PBXGroup;
+			children = (
+				BA66C0142589376300618B04 /* FileReader.swift */,
+				BA66C037258938FF00618B04 /* FileReaderError.swift */,
+				BA66C033258938F200618B04 /* FileReaderOptions.swift */,
+			);
+			path = FileReader;
+			sourceTree = "<group>";
+		};
+		BA66C03D25893DC700618B04 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BA66C0092589376300618B04 /* LocalizationCodeFile.swift */,
+				BA66C0082589376300618B04 /* LocalizationStringsFile.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BA66C04025893E1000618B04 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA66C0152589376300618B04 /* String+Whitespaces.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BA82E0032579EC7F0009853A = {
 			isa = PBXGroup;
 			children = (
 				BA82E00E2579EC800009853A /* Localizerlint */,
+				BA1630392588390F00066062 /* LocalizerlintFramework */,
+				BA1630442588390F00066062 /* LocalizerlintFrameworkTests */,
 				BA82E00D2579EC800009853A /* Products */,
+				BA66C0282589377000618B04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				BA82E00C2579EC7F0009853A /* Localizerlint */,
+				BA1630382588390F00066062 /* LocalizerlintFramework.framework */,
+				BA1630402588390F00066062 /* LocalizerlintFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,46 +254,60 @@
 			isa = PBXGroup;
 			children = (
 				BA82E00F2579EC800009853A /* main.swift */,
-				BA82E025257A99760009853A /* Sources */,
-				BA82E01D257A803E0009853A /* Utils */,
 			);
 			path = Localizerlint;
 			sourceTree = "<group>";
 		};
-		BA82E01D257A803E0009853A /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				BA82E2C5257DACD40009853A /* Logger */,
-				BA82E01E257A804E0009853A /* String+Whitespaces.swift */,
-				BA82E026257A99BD0009853A /* DirectoryHelper.swift */,
-				BA82E029257A9B920009853A /* FileReader.swift */,
-				BA82E02C257A9C550009853A /* FileAnalyzer.swift */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
-		BA82E025257A99760009853A /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				BA82E2C2257D44840009853A /* LocalizationStringsFile.swift */,
-				BA82E032257A9DAA0009853A /* LocalizationCodeFile.swift */,
-			);
-			name = Sources;
-			sourceTree = "<group>";
-		};
-		BA82E2C5257DACD40009853A /* Logger */ = {
-			isa = PBXGroup;
-			children = (
-				BA82E288257C1BC50009853A /* Logger.swift */,
-				BA82E2C6257DACE90009853A /* Loggable.swift */,
-				BA82E2C9257DACFC0009853A /* BuildLog.swift */,
-			);
-			path = Logger;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		BA1630332588390F00066062 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1630482588390F00066062 /* LocalizerlintFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		BA1630372588390F00066062 /* LocalizerlintFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA16304D2588390F00066062 /* Build configuration list for PBXNativeTarget "LocalizerlintFramework" */;
+			buildPhases = (
+				BA1630332588390F00066062 /* Headers */,
+				BA1630342588390F00066062 /* Sources */,
+				BA1630352588390F00066062 /* Frameworks */,
+				BA1630362588390F00066062 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocalizerlintFramework;
+			productName = LocalizerlintFramework;
+			productReference = BA1630382588390F00066062 /* LocalizerlintFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA16303F2588390F00066062 /* LocalizerlintFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA16304E2588390F00066062 /* Build configuration list for PBXNativeTarget "LocalizerlintFrameworkTests" */;
+			buildPhases = (
+				BA16303C2588390F00066062 /* Sources */,
+				BA16303D2588390F00066062 /* Frameworks */,
+				BA16303E2588390F00066062 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA1630432588390F00066062 /* PBXTargetDependency */,
+			);
+			name = LocalizerlintFrameworkTests;
+			productName = LocalizerlintFrameworkTests;
+			productReference = BA1630402588390F00066062 /* LocalizerlintFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BA82E00B2579EC7F0009853A /* Localizerlint */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA82E0132579EC800009853A /* Build configuration list for PBXNativeTarget "Localizerlint" */;
@@ -125,10 +315,12 @@
 				BA82E0082579EC7F0009853A /* Sources */,
 				BA82E0092579EC7F0009853A /* Frameworks */,
 				BA82E00A2579EC7F0009853A /* CopyFiles */,
+				BA66C02D2589377000618B04 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BA66C02C2589377000618B04 /* PBXTargetDependency */,
 			);
 			name = Localizerlint;
 			packageProductDependencies = (
@@ -145,8 +337,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					BA1630372588390F00066062 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1230;
+					};
+					BA16303F2588390F00066062 = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					BA82E00B2579EC7F0009853A = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -169,31 +368,195 @@
 			projectRoot = "";
 			targets = (
 				BA82E00B2579EC7F0009853A /* Localizerlint */,
+				BA1630372588390F00066062 /* LocalizerlintFramework */,
+				BA16303F2588390F00066062 /* LocalizerlintFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		BA1630362588390F00066062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA16303E2588390F00066062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA66C0662589AB0200618B04 /* LocalizedFileTest.strings in Resources */,
+				BA66C05A2589821C00618B04 /* LocalizedCodeTest.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		BA1630342588390F00066062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA66C076258A67C500618B04 /* VerboseLog.swift in Sources */,
+				BA66C01B2589376300618B04 /* Loggable.swift in Sources */,
+				BA66C0212589376300618B04 /* String+Whitespaces.swift in Sources */,
+				BA66C01C2589376300618B04 /* DirectoryHelper.swift in Sources */,
+				BA66C0162589376300618B04 /* LocalizationStringsFile.swift in Sources */,
+				BA66C01A2589376300618B04 /* BuildLog.swift in Sources */,
+				BA66C01D2589376300618B04 /* RegexEvaluatorError.swift in Sources */,
+				BA66C0202589376300618B04 /* FileReader.swift in Sources */,
+				BA66C0172589376300618B04 /* LocalizationCodeFile.swift in Sources */,
+				BA66C0462589512C00618B04 /* LogType.swift in Sources */,
+				BA66C01F2589376300618B04 /* RegexPattern.swift in Sources */,
+				BA66C034258938F200618B04 /* FileReaderOptions.swift in Sources */,
+				BA66C038258938FF00618B04 /* FileReaderError.swift in Sources */,
+				BA66C0192589376300618B04 /* Logger.swift in Sources */,
+				BA66C01E2589376300618B04 /* RegexEvaluator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA16303C2588390F00066062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA66C0622589AA2900618B04 /* DirectoryHelperTest.swift in Sources */,
+				BA66C05E258987B200618B04 /* StringExtensionTest.swift in Sources */,
+				BA16308025883D8200066062 /* FileReaderTest.swift in Sources */,
+				BA66C07A258A67E000618B04 /* VerboseLogTest.swift in Sources */,
+				BA66C05625897C1300618B04 /* RegexEvaluatorTest.swift in Sources */,
+				BA1630572588393A00066062 /* BuildLogTest.swift in Sources */,
+				BA66C070258A5AFD00618B04 /* FilesContents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA82E0082579EC7F0009853A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA82E2C3257D44840009853A /* LocalizationStringsFile.swift in Sources */,
-				BA82E2CA257DACFC0009853A /* BuildLog.swift in Sources */,
-				BA82E033257A9DAA0009853A /* LocalizationCodeFile.swift in Sources */,
-				BA82E02A257A9B920009853A /* FileReader.swift in Sources */,
-				BA82E027257A99BD0009853A /* DirectoryHelper.swift in Sources */,
-				BA82E289257C1BC50009853A /* Logger.swift in Sources */,
-				BA82E01F257A804E0009853A /* String+Whitespaces.swift in Sources */,
 				BA82E0102579EC800009853A /* main.swift in Sources */,
-				BA82E2C7257DACE90009853A /* Loggable.swift in Sources */,
-				BA82E02D257A9C550009853A /* FileAnalyzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BA1630432588390F00066062 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA1630372588390F00066062 /* LocalizerlintFramework */;
+			targetProxy = BA1630422588390F00066062 /* PBXContainerItemProxy */;
+		};
+		BA66C02C2589377000618B04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA1630372588390F00066062 /* LocalizerlintFramework */;
+			targetProxy = BA66C02B2589377000618B04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		BA1630492588390F00066062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LocalizerlintFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizerlintFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA16304A2588390F00066062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LocalizerlintFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizerlintFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BA16304B2588390F00066062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = LocalizerlintFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizerlintFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BA16304C2588390F00066062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = LocalizerlintFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizerlintFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		BA82E0112579EC800009853A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -245,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -300,7 +663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -312,6 +675,7 @@
 		BA82E0142579EC800009853A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -321,6 +685,7 @@
 		BA82E0152579EC800009853A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -330,6 +695,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BA16304D2588390F00066062 /* Build configuration list for PBXNativeTarget "LocalizerlintFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA1630492588390F00066062 /* Debug */,
+				BA16304A2588390F00066062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA16304E2588390F00066062 /* Build configuration list for PBXNativeTarget "LocalizerlintFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA16304B2588390F00066062 /* Debug */,
+				BA16304C2588390F00066062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BA82E0072579EC7F0009853A /* Build configuration list for PBXProject "Localizerlint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

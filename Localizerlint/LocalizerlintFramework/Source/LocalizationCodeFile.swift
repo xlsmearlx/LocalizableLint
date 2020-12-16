@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct LocalizationCodeFile {
+/// Container for ".swift", ".h" files localization keys
+public struct LocalizationCodeFile {
     let path: String
     let keys: Set<String>
 }
