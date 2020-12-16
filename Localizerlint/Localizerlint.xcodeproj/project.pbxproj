@@ -22,8 +22,6 @@
 		BA66C01F2589376300618B04 /* RegexPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0132589376300618B04 /* RegexPattern.swift */; };
 		BA66C0202589376300618B04 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0142589376300618B04 /* FileReader.swift */; };
 		BA66C0212589376300618B04 /* String+Whitespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0152589376300618B04 /* String+Whitespaces.swift */; };
-		BA66C0292589377000618B04 /* LocalizerlintFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1630382588390F00066062 /* LocalizerlintFramework.framework */; };
-		BA66C02A2589377000618B04 /* LocalizerlintFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA1630382588390F00066062 /* LocalizerlintFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA66C034258938F200618B04 /* FileReaderOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C033258938F200618B04 /* FileReaderOptions.swift */; };
 		BA66C038258938FF00618B04 /* FileReaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C037258938FF00618B04 /* FileReaderError.swift */; };
 		BA66C0462589512C00618B04 /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0452589512C00618B04 /* LogType.swift */; };
@@ -37,6 +35,8 @@
 		BA66C07A258A67E000618B04 /* VerboseLogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C079258A67E000618B04 /* VerboseLogTest.swift */; };
 		BA82E0102579EC800009853A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E00F2579EC800009853A /* main.swift */; };
 		BA82E023257A8FE30009853A /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = BA82E022257A8FE30009853A /* ArgumentParser */; };
+		BA9D95A1258ABA6E00A0B5B2 /* LocalizerlintFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1630382588390F00066062 /* LocalizerlintFramework.framework */; };
+		BA9D95A2258ABA6E00A0B5B2 /* LocalizerlintFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA1630382588390F00066062 /* LocalizerlintFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 			remoteGlobalIDString = BA1630372588390F00066062;
 			remoteInfo = LocalizerlintFramework;
 		};
-		BA66C02B2589377000618B04 /* PBXContainerItemProxy */ = {
+		BA9D95A3258ABA6E00A0B5B2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BA82E0042579EC7F0009853A /* Project object */;
 			proxyType = 1;
@@ -57,17 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BA66C02D2589377000618B04 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BA66C02A2589377000618B04 /* LocalizerlintFramework.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BA82E00A2579EC7F0009853A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,6 +65,17 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		BA9D95A5258ABA6E00A0B5B2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA9D95A2258ABA6E00A0B5B2 /* LocalizerlintFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -133,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA66C0292589377000618B04 /* LocalizerlintFramework.framework in Frameworks */,
+				BA9D95A1258ABA6E00A0B5B2 /* LocalizerlintFramework.framework in Frameworks */,
 				BA82E023257A8FE30009853A /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,12 +315,12 @@
 				BA82E0082579EC7F0009853A /* Sources */,
 				BA82E0092579EC7F0009853A /* Frameworks */,
 				BA82E00A2579EC7F0009853A /* CopyFiles */,
-				BA66C02D2589377000618B04 /* Embed Frameworks */,
+				BA9D95A5258ABA6E00A0B5B2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BA66C02C2589377000618B04 /* PBXTargetDependency */,
+				BA9D95A4258ABA6E00A0B5B2 /* PBXTargetDependency */,
 			);
 			name = Localizerlint;
 			packageProductDependencies = (
@@ -446,10 +446,10 @@
 			target = BA1630372588390F00066062 /* LocalizerlintFramework */;
 			targetProxy = BA1630422588390F00066062 /* PBXContainerItemProxy */;
 		};
-		BA66C02C2589377000618B04 /* PBXTargetDependency */ = {
+		BA9D95A4258ABA6E00A0B5B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BA1630372588390F00066062 /* LocalizerlintFramework */;
-			targetProxy = BA66C02B2589377000618B04 /* PBXContainerItemProxy */;
+			targetProxy = BA9D95A3258ABA6E00A0B5B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -474,6 +474,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizerlintFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -505,6 +506,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizerlintFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
