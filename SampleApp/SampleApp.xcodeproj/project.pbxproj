@@ -42,9 +42,9 @@
 		BA82E04D257AE0190009853A /* LocalizableLintSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableLintSampleApp.swift; sourceTree = "<group>"; };
 		BA82E04E257AE0190009853A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BA82E04F257AE01B0009853A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA82E054257AE01B0009853A /* LocalizableLintSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalizableLintSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA82E054257AE01B0009853A /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA82E057257AE01B0009853A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA82E05C257AE01B0009853A /* LocalizableLintSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalizableLintSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA82E05C257AE01B0009853A /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA82E05E257AE01C0009853A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA82E05F257AE01C0009853A /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		BA82E064257AE01C0009853A /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,8 +117,8 @@
 		BA82E055257AE01B0009853A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA82E054257AE01B0009853A /* LocalizableLintSample.app */,
-				BA82E05C257AE01B0009853A /* LocalizableLintSample.app */,
+				BA82E054257AE01B0009853A /* SampleApp.app */,
+				BA82E05C257AE01B0009853A /* SampleApp.app */,
 				BA82E064257AE01C0009853A /* Tests iOS.xctest */,
 				BA82E06F257AE01C0009853A /* Tests macOS.xctest */,
 			);
@@ -163,9 +163,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BA82E053257AE01B0009853A /* LocalizableLintSample (iOS) */ = {
+		BA82E053257AE01B0009853A /* SampleApp (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA82E07E257AE01C0009853A /* Build configuration list for PBXNativeTarget "LocalizableLintSample (iOS)" */;
+			buildConfigurationList = BA82E07E257AE01C0009853A /* Build configuration list for PBXNativeTarget "SampleApp (iOS)" */;
 			buildPhases = (
 				BA82E050257AE01B0009853A /* Sources */,
 				BA82E051257AE01B0009853A /* Frameworks */,
@@ -176,14 +176,14 @@
 			);
 			dependencies = (
 			);
-			name = "LocalizableLintSample (iOS)";
+			name = "SampleApp (iOS)";
 			productName = "LocalizableLintSample (iOS)";
-			productReference = BA82E054257AE01B0009853A /* LocalizableLintSample.app */;
+			productReference = BA82E054257AE01B0009853A /* SampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BA82E05B257AE01B0009853A /* LocalizableLintSample (macOS) */ = {
+		BA82E05B257AE01B0009853A /* SampleApp (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA82E081257AE01C0009853A /* Build configuration list for PBXNativeTarget "LocalizableLintSample (macOS)" */;
+			buildConfigurationList = BA82E081257AE01C0009853A /* Build configuration list for PBXNativeTarget "SampleApp (macOS)" */;
 			buildPhases = (
 				BA82E058257AE01B0009853A /* Sources */,
 				BA82E059257AE01B0009853A /* Frameworks */,
@@ -193,9 +193,9 @@
 			);
 			dependencies = (
 			);
-			name = "LocalizableLintSample (macOS)";
+			name = "SampleApp (macOS)";
 			productName = "LocalizableLintSample (macOS)";
-			productReference = BA82E05C257AE01B0009853A /* LocalizableLintSample.app */;
+			productReference = BA82E05C257AE01B0009853A /* SampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BA82E063257AE01C0009853A /* Tests iOS */ = {
@@ -259,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BA82E04B257AE0190009853A /* Build configuration list for PBXProject "LocalizableLintSample" */;
+			buildConfigurationList = BA82E04B257AE0190009853A /* Build configuration list for PBXProject "SampleApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -273,8 +273,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA82E053257AE01B0009853A /* LocalizableLintSample (iOS) */,
-				BA82E05B257AE01B0009853A /* LocalizableLintSample (macOS) */,
+				BA82E053257AE01B0009853A /* SampleApp (iOS) */,
+				BA82E05B257AE01B0009853A /* SampleApp (macOS) */,
 				BA82E063257AE01C0009853A /* Tests iOS */,
 				BA82E06E257AE01C0009853A /* Tests macOS */,
 			);
@@ -379,12 +379,12 @@
 /* Begin PBXTargetDependency section */
 		BA82E066257AE01C0009853A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA82E053257AE01B0009853A /* LocalizableLintSample (iOS) */;
+			target = BA82E053257AE01B0009853A /* SampleApp (iOS) */;
 			targetProxy = BA82E065257AE01C0009853A /* PBXContainerItemProxy */;
 		};
 		BA82E071257AE01C0009853A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA82E05B257AE01B0009853A /* LocalizableLintSample (macOS) */;
+			target = BA82E05B257AE01B0009853A /* SampleApp (macOS) */;
 			targetProxy = BA82E070257AE01C0009853A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -528,7 +528,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizableLintSample;
-				PRODUCT_NAME = LocalizableLintSample;
+				PRODUCT_NAME = SampleApp;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -550,7 +550,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizableLintSample;
-				PRODUCT_NAME = LocalizableLintSample;
+				PRODUCT_NAME = SampleApp;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -574,7 +574,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizableLintSample;
-				PRODUCT_NAME = LocalizableLintSample;
+				PRODUCT_NAME = SampleApp;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -596,7 +596,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slm.LocalizableLintSample;
-				PRODUCT_NAME = LocalizableLintSample;
+				PRODUCT_NAME = SampleApp;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -690,7 +690,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA82E04B257AE0190009853A /* Build configuration list for PBXProject "LocalizableLintSample" */ = {
+		BA82E04B257AE0190009853A /* Build configuration list for PBXProject "SampleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA82E07C257AE01C0009853A /* Debug */,
@@ -699,7 +699,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA82E07E257AE01C0009853A /* Build configuration list for PBXNativeTarget "LocalizableLintSample (iOS)" */ = {
+		BA82E07E257AE01C0009853A /* Build configuration list for PBXNativeTarget "SampleApp (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA82E07F257AE01C0009853A /* Debug */,
@@ -708,7 +708,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA82E081257AE01C0009853A /* Build configuration list for PBXNativeTarget "LocalizableLintSample (macOS)" */ = {
+		BA82E081257AE01C0009853A /* Build configuration list for PBXNativeTarget "SampleApp (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA82E082257AE01C0009853A /* Debug */,

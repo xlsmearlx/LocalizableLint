@@ -9,9 +9,6 @@ import Foundation
 import ArgumentParser
 import LocalizerlintFramework
 
-CommandLine.arguments.append("/Users/slagunes/Developer/Localizerlint/SampleApp/")
-CommandLine.arguments.append("--verbose")
-
 struct Localizerlint: ParsableCommand {
     @Argument(wrappedValue: "\(FileManager.default.currentDirectoryPath)/", help: "The root path of the project")
     var path: String
