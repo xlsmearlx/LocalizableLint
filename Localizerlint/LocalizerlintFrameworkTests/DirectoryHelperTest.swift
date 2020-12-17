@@ -27,31 +27,35 @@ class DirectoryHelperTest: XCTestCase {
         tmpDir = .none
     }
     
-    func testInit()  {
-        let sut = DirectoryHelper(path: "path", options: [.verbose])
-        
-        XCTAssertEqual(sut.path, "path")
-        XCTAssertEqual(sut.options, [.verbose])
+    func testInitWithInvalidPathShouldBeNil()  {
+        let sut = DirectoryHelper(path: "path", options: [])
+        XCTAssertNil(sut)
     }
-    
+
+    func testInitWithValidPathShouldNotBeNil()  {
+        let sut = DirectoryHelper(path: tmpDir!, options: [])
+        XCTAssertNotNil(sut)
+        XCTAssertEqual(sut!.path, tmpDir!)
+    }
+
     func testPathFilesSuccess() {
         let sut = DirectoryHelper(path: tmpDir!, options: [])
-        XCTAssertEqual(sut.pathFiles.count, 3)
+        XCTAssertEqual(sut!.pathFiles.count, 3)
     }
 
     func testLocalizableFiles() {
         let sut = DirectoryHelper(path: tmpDir!, options: [])
-        XCTAssertEqual(sut.localizableFiles.count, 1)
+        XCTAssertEqual(sut!.localizableFiles.count, 1)
     }
     
     func testExecutableFilesShouldRetrieveSwiftFilesOnly() throws {
         let sut = DirectoryHelper(path: tmpDir!, options: [])
-        XCTAssertEqual(sut.executableFiles.count, 1)
+        XCTAssertEqual(sut!.executableFiles.count, 1)
     }
     
     func testExecutableFilesObjectiveCEnabled() throws {
         let sut = DirectoryHelper(path: tmpDir!, options: [.objectivec])
-        XCTAssertEqual(sut.executableFiles.count, 2)
+        XCTAssertEqual(sut!.executableFiles.count, 2)
     }
 }
 

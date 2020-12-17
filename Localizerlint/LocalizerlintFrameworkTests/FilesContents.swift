@@ -22,6 +22,7 @@ let localizedStrings = """
 
 /* Coupon Message */
 "PRICE_LABEL" = "Price";
+"PRICE_LABEL" = "Price";
 """
 
 let localizedCode = """

@@ -10,7 +10,6 @@ import Foundation
 /// Errors related to reading files
 public enum FileReaderError: Error {
     case unreadablePath(String)
-    case duplicateKeys
 }
 
 extension FileReaderError: LocalizedError {
@@ -18,8 +17,6 @@ extension FileReaderError: LocalizedError {
         switch self {
         case .unreadablePath(let path):
             return "Unreadable path: \(path)"
-        case .duplicateKeys:
-            return "Duplicate keys found"
         }
     }
 }

@@ -40,10 +40,15 @@ class FileReaderTest: XCTestCase {
     }
     
     func testReadLocalizedFile() throws {
-        let output = try FileReader.readFiles(filePaths: ["\(tmpDir!)/localized.strings"], options: [])
+        let output = try FileReader.readFiles(filePaths: ["\(tmpDir!)/localized.strings"])
         XCTAssertEqual(output.count, 1)
         XCTAssertEqual(output[0].path, "\(tmpDir!)/localized.strings")
         XCTAssertEqual(output[0].keys.count, 4)
+    }
+    
+    func testReadFilesHaveDuplicatedKeysViolations() throws {
+        let sut = try FileReader.readFiles(filePaths: ["\(tmpDir!)/localized.strings"])
+        XCTAssertEqual(sut[0].ruleViolations.count, 1)
     }
 
     func testLocalizedStringsInCodeBruteForce() throws {
@@ -78,22 +83,14 @@ class FileReaderTest: XCTestCase {
         let output = try FileReader.localizedStringsInCode(filePaths: ["\(tmpDir!)/emptyFile.swift"], options: [])
         XCTAssertEqual(output.count, 0)
     }
-
-    func testEvaluateKeysDefaultShouldPrintWarnings() throws {
-        let localizableString = try FileReader.readFiles(filePaths: ["\(tmpDir!)/localized.strings"], options: [])
+    
+    func testEvaluateKeysShouldFoundTwoDeadKeys() throws {
+        let localizableString = try FileReader.readFiles(filePaths: ["\(tmpDir!)/localized.strings"])
         let codefiles = try FileReader.localizedStringsInCode(filePaths: ["\(tmpDir!)/file.swift", "\(tmpDir!)/file.m"], options: [])
-
-        let deadKeysLogs = try FileReader.evaluateKeys(codeFiles: codefiles, localizationFiles: localizableString, options: [])
-        XCTAssertEqual(deadKeysLogs.count, 2)
-        XCTAssertEqual(deadKeysLogs.filter({ $0.type == .warning }).count, 2)
-    }
-
-    func testEvaluateKeysStrictShouldPrintError() throws {
-        let localizableString = try FileReader.readFiles(filePaths: ["\(tmpDir!)/localized.strings"], options: [])
-        let codefiles = try FileReader.localizedStringsInCode(filePaths: ["\(tmpDir!)/file.swift", "\(tmpDir!)/file.m"], options: [])
-
-        let deadKeysLogs = try FileReader.evaluateKeys(codeFiles: codefiles, localizationFiles: localizableString, options: [.strict])
-        XCTAssertEqual(deadKeysLogs.count, 2)
-        XCTAssertEqual(deadKeysLogs.filter({ $0.type == .error }).count, 2)
+        
+        let fileViolations = try FileReader.evaluateKeys(codeFiles: codefiles, localizationFiles: localizableString, options: [])
+        XCTAssertEqual(fileViolations.count, 1)
+        XCTAssertEqual(fileViolations[0].path, "\(tmpDir!)/localized.strings")
+        XCTAssertEqual(fileViolations[0].violations.count, 2)
     }
 }

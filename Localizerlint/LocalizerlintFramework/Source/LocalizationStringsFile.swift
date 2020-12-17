@@ -9,16 +9,17 @@ import Foundation
 
 /// Container for ".strings" files localization keys and values
 public struct LocalizedStringsFile {
-    let path: String
+    public let path: String
     let kv: [String: String]
+    public let ruleViolations: [RuleViolation]
 
     var keys: [String] {
         return Array(kv.keys)
     }
-
-    init(path: String, kv: [String: String]) {
-        self.path = path
-        self.kv = kv
+    
+    /// Friendly description with the file path and the localized strings
+    public var description: String {
+        "file \(path) has \(keys.count) localizedStrings.\(!keys.isEmpty ? " \(keys)" : "")"
     }
 }
 

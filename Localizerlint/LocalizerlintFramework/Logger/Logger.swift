@@ -11,8 +11,4 @@ public struct Logger {
     public static func print(log: Loggable) {
         Swift.print(log.description)
     }
-    
-    public static func print(logs: [Loggable]) {
-        logs.forEach({ Swift.print($0.description) })
-    }
 }

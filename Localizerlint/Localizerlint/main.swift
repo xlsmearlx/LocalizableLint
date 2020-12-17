@@ -33,7 +33,8 @@ struct Localizerlint: ParsableCommand {
     
     mutating func run() throws {
         var options:FileReaderOptions = []
-        
+        var shouldAbort = false
+                
         if bruteForce {
             options.update(with: .bruteForce)
         } else {
@@ -50,31 +51,63 @@ struct Localizerlint: ParsableCommand {
             Logger.print(log: BuildLog(message: "Verbose enabled: \(verbose)", type: .message))
         }
         
-        let directory = DirectoryHelper(path: path, options: options)
+        guard let directory = DirectoryHelper(path: path, options: options) else { throw FileReaderError.unreadablePath(path) }
         
-        do {
-            let stringFiles = try FileReader.readFiles(filePaths: directory.localizableFiles, options: options)
+        let stringFilesPath = directory.localizableFiles
+        
+        if verbose {
+            Logger.print(log: BuildLog(message: "Available localizable files \(stringFilesPath.count)", type: .message))
+            stringFilesPath.forEach({ Logger.print(log: BuildLog(message: "\($0)", type: .message)) })
+        }
+        
+        let stringFiles = try FileReader.readFiles(filePaths: directory.localizableFiles)
+        
+        for stringFile in stringFiles {
+            stringFile.ruleViolations.forEach({
+                Logger.print(log: BuildLog(file: stringFile.path,
+                                           line: $0.lineNumber,
+                                           message: $0.type.description,
+                                           type: strict ? .error : .warning))
+                shouldAbort = true
+            })
+        }
+        
+        if !searchDuplicatesOnly {
+            Logger.print(log: BuildLog(message: "Searching for unused keys", type: .message))
             
-            if !searchDuplicatesOnly {
-                Logger.print(log: BuildLog(message: "Searching for unused keys", type: .message))
-                
-                let localizedKeysInCode = try FileReader.localizedStringsInCode(filePaths: directory.executableFiles, options: options)
-                
-                if verbose {
-                    Logger.print(log: BuildLog(message: "Source files with localization: \(localizedKeysInCode.count)", type: .message))
-                    Logger.print(log: BuildLog(message: "LocalizationFiles files: \(stringFiles.count)", type: .message))
-                }
-                
-                let logs = try FileReader.evaluateKeys(codeFiles: localizedKeysInCode, localizationFiles: stringFiles, options: options)
-                
-                if !logs.isEmpty {
-                    Logger.print(logs: logs)
-                    options.contains(.strict) ? abort() : nil
-                }
+            let codeFiles = directory.executableFiles
+            
+            if verbose {
+                Logger.print(log: BuildLog(message: "Available source files \(codeFiles.count)", type: .message))
+                codeFiles.forEach({ Logger.print(log: BuildLog(message: $0, type: .message)) })
             }
-        } catch {
-            Logger.print(log: BuildLog(message: error.localizedDescription, type: .message))
-            abort()
+            
+            let localizedKeysInCode = try FileReader.localizedStringsInCode(filePaths: codeFiles, options: options)
+            
+            if verbose {
+                Logger.print(log: BuildLog(message: "Source files with localization: \(localizedKeysInCode.count)", type: .message))
+                Logger.print(log: BuildLog(message: "LocalizationFiles files: \(stringFiles.count)", type: .message))
+                
+                localizedKeysInCode.forEach({
+                    Logger.print(log: BuildLog(message: $0.description, type: .message))
+                })
+            }
+            
+            let violations = try FileReader.evaluateKeys(codeFiles: localizedKeysInCode, localizationFiles: stringFiles, options: options)
+            
+            for violation in violations {
+                violation.violations.forEach({
+                    Logger.print(log: BuildLog(file: violation.path,
+                                               line: $0.lineNumber,
+                                               message: $0.type.description,
+                                               type: strict ? .error : .warning))
+                    shouldAbort = true
+                })
+            }
+        }
+        
+        if shouldAbort {
+            Localizerlint.exit(withError: LocalizerlintError.strictModeEnabled)
         }
     }
 }

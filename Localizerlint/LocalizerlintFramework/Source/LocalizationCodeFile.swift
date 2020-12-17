@@ -11,4 +11,9 @@ import Foundation
 public struct LocalizationCodeFile {
     let path: String
     let keys: Set<String>
+    
+    /// Friendly description with the file path and the localized keys
+    public var description: String {
+        "file \(path) has \(keys.count) localizedStrings.\(!keys.isEmpty ? " \(keys)" : "")"
+    }
 }

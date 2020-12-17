@@ -74,14 +74,14 @@ class RegexEvaluatorTest: XCTestCase {
         
         let matches: [String] = try RegexEvaluator.matchesFor(pattern: .localizedString,
                                                               content: localizedStrings.removingAllWhiteSpaces)
-        XCTAssertEqual(matches.count, 4)
+        XCTAssertEqual(matches.count, 5)
     }
     
     func testMatchesForKeyValueLocalizedStringFiles() throws {
-        let matches: RegexEvaluator.KeyValueMatch = try RegexEvaluator.matchesFor(pattern: .localizedString,
+        let matches: RegexEvaluator.KeyValueMatch = try RegexEvaluator.matchFor(pattern: .localizedString,
                                                                                   content: localizedStrings.removingAllWhiteSpaces)
-        XCTAssertEqual(matches.keys.count, 4)
-        XCTAssertEqual(matches.values.count, 4)
+        XCTAssertEqual(matches.keys.count, 5)
+        XCTAssertEqual(matches.values.count, 5)
         XCTAssertEqual(matches.keys[2], "DESCRIPTION_LABEL")
         XCTAssertEqual(matches.values[2], "Description")
     }

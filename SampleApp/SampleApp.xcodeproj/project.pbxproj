@@ -333,7 +333,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Localizerlint\" --inclue-swift-ui\n";
+			shellScript = "start_time=`date +%s`\n\"${SRCROOT}/Localizerlint\" --inclue-swift-ui --strict\nend_time=`date +%s`\necho execution time was `expr $end_time - $start_time` s.\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

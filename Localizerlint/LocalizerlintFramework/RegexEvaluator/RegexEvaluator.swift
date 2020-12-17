@@ -9,7 +9,11 @@ import Foundation
 
 struct RegexEvaluator {
     typealias KeyValueMatch = (keys: [String], values: [String])
-
+    
+    /// Creates an instance of NSRegularExpression with the given parttern
+    /// - Parameter pattern: RegexPattern to use
+    /// - Throws: An Error if the RegexPattern is not valid
+    /// - Returns: An instance of NSRegularExpression
     private static func make(pattern: RegexPattern) throws -> NSRegularExpression {
         var regex: NSRegularExpression
         
@@ -22,6 +26,12 @@ struct RegexEvaluator {
         return regex
     }
     
+    /// Reads the content and finds all the pattern matches
+    /// - Parameters:
+    ///   - pattern: RegexPattern to use
+    ///   - content: content to match
+    /// - Throws: An Error if the RegexPattern is not valid
+    /// - Returns: An array of NSTextCheckingResult that matches that matches regex pattern from content
     private static func matchesFor(pattern: RegexPattern, content: String) throws -> [NSTextCheckingResult] {
         let regex = try make(pattern: pattern)
         
@@ -43,7 +53,12 @@ struct RegexEvaluator {
         })
     }
     
-    static func matchesFor(pattern: RegexPattern, content: String) throws -> KeyValueMatch {
+    /// Reads the content and finds all the pattern matches
+    /// - Parameters:
+    ///   - pattern: regex pattern
+    ///   - content: content to match
+    /// - Returns: Returns a tuple with all the keys and values that match regex pattern from content
+    static func matchFor(pattern: RegexPattern, content: String) throws -> KeyValueMatch {
         let regexMatches: [NSTextCheckingResult] = try matchesFor(pattern: pattern, content: content)
         
         var keys = [String]()
