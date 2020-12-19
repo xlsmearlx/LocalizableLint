@@ -11,8 +11,8 @@ import Foundation
 public struct LocalizedStringsFile {
     public let path: String
     let kv: [String: String]
-    public let ruleViolations: [RuleViolation]
-
+    public var ruleViolations: [RuleViolation]
+    
     var keys: [String] {
         return Array(kv.keys)
     }
@@ -20,6 +20,21 @@ public struct LocalizedStringsFile {
     /// Friendly description with the file path and the localized strings
     public var description: String {
         "file \(path) has \(keys.count) localizedStrings.\(!keys.isEmpty ? " \(keys)" : "")"
+    }
+}
+
+extension LocalizedStringsFile: Encodable {
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(path, forKey: .file)
+        try container.encodeIfPresent(ruleViolations.count, forKey: .totalViolations)
+        try container.encodeIfPresent(ruleViolations, forKey: .ruleViolations)
+    }
+    
+    enum CodingKeys: CodingKey {
+        case file
+        case totalViolations
+        case ruleViolations
     }
 }
 

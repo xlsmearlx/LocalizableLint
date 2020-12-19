@@ -9,6 +9,12 @@ import Foundation
 import ArgumentParser
 import LocalizerlintFramework
 
+CommandLine.arguments.append("/Users/slagunes/Developer/Localizerlint/SampleApp/")
+//CommandLine.arguments.append("--help")
+//CommandLine.arguments.append("--strict")
+//CommandLine.arguments.append("--ouput=xcode,json")
+CommandLine.arguments.append("--verbose")
+
 struct Localizerlint: ParsableCommand {
     @Argument(wrappedValue: "\(FileManager.default.currentDirectoryPath)/", help: "The root path of the project")
     var path: String
@@ -28,8 +34,11 @@ struct Localizerlint: ParsableCommand {
     @Flag(name: .shortAndLong, help: "Treats warnings as erros")
     var strict = false
     
-    @Flag(name: .shortAndLong, help: "Shows details about the results of running Localizerlint")
+    @Flag(name: .shortAndLong, help: "Enable debug logs")
     var verbose = false
+    
+    @Option(name: .shortAndLong, help: "Available output types: json", transform: OutputType.typesFromString)
+    var ouput: [OutputType] = [.xcode]
     
     mutating func run() throws {
         var options:FileReaderOptions = []
@@ -48,6 +57,7 @@ struct Localizerlint: ParsableCommand {
             Logger.print(log: BuildLog(message: "SwiftUI enabled: \(options.contains(.swiftui))", type: .message))
             Logger.print(log: BuildLog(message: "Objective-C enabled: \(options.contains(.objectivec))", type: .message))
             Logger.print(log: BuildLog(message: "Force enabled: \(strict)", type: .message))
+            Logger.print(log: BuildLog(message: "Ouput types: \(ouput)", type: .message))
             Logger.print(log: BuildLog(message: "Verbose enabled: \(verbose)", type: .message))
         }
         
@@ -60,18 +70,12 @@ struct Localizerlint: ParsableCommand {
             stringFilesPath.forEach({ Logger.print(log: BuildLog(message: "\($0)", type: .message)) })
         }
         
-        let stringFiles = try FileReader.readFiles(filePaths: directory.localizableFiles)
+        var stringFiles = try FileReader.readFiles(filePaths: directory.localizableFiles)
         
-        for stringFile in stringFiles {
-            stringFile.ruleViolations.forEach({
-                Logger.print(log: BuildLog(file: stringFile.path,
-                                           line: $0.lineNumber,
-                                           message: $0.type.description,
-                                           type: strict ? .error : .warning))
-                shouldAbort = true
-            })
+        if verbose {
+            stringFiles.forEach({ Logger.print(log: BuildLog.init(message: $0.description, type: .message)) })
         }
-        
+                
         if !searchDuplicatesOnly {
             Logger.print(log: BuildLog(message: "Searching for unused keys", type: .message))
             
@@ -92,21 +96,31 @@ struct Localizerlint: ParsableCommand {
                     Logger.print(log: BuildLog(message: $0.description, type: .message))
                 })
             }
-            
-            let violations = try FileReader.evaluateKeys(codeFiles: localizedKeysInCode, localizationFiles: stringFiles, options: options)
-            
-            for violation in violations {
-                violation.violations.forEach({
-                    Logger.print(log: BuildLog(file: violation.path,
-                                               line: $0.lineNumber,
-                                               message: $0.type.description,
-                                               type: strict ? .error : .warning))
-                    shouldAbort = true
-                })
-            }
+                        
+            try FileReader.evaluateKeys(codeFiles: localizedKeysInCode,
+                                        localizationFiles: &stringFiles,
+                                                          options: options)
         }
         
-        if shouldAbort {
+        
+        if ouput.contains(where: { $0 == .json }) {
+            JSONMaker().makeJSONFile(with: stringFiles, at: path)
+        }
+        
+        if ouput.contains(where: { $0 == .xcode }) {
+            stringFiles.forEach({ file in
+                Logger.print(log: BuildLog(message: "\(file.path) violations \(file.ruleViolations)", type: .message))
+                file.ruleViolations.forEach { rule in
+                    Logger.print(log: BuildLog(file: file.path,
+                                               line: rule.lineNumber,
+                                               message: rule.type.description,
+                                               type: strict ? .error : .warning))
+                }
+                
+            })
+        }
+                
+        if strict && shouldAbort {
             Localizerlint.exit(withError: LocalizerlintError.strictModeEnabled)
         }
     }
