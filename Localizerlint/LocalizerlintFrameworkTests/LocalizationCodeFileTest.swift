@@ -28,5 +28,4 @@ class LocalizationCodeFileTest: XCTestCase {
         let sut = LocalizationCodeFile(path: "MyPath", keys: [])
         XCTAssertEqual(sut.description, "file MyPath has 0 localizedStrings.")
     }
-
 }

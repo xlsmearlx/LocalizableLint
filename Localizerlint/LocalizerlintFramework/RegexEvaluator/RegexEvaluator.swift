@@ -67,7 +67,7 @@ struct RegexEvaluator {
         regexMatches.forEach({
             guard let key = Range($0.range(at: 1), in: content).map({ String(content[$0]) }),
                   let value = Range($0.range(at: 2), in: content).map({ String(content[$0]) }) else {
-                    return
+                return
             }
             keys.append(key)
             values.append(value)

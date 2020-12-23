@@ -7,7 +7,9 @@
 
 "NAME_LABEL" = "Nombre";
 "MESSAGE_LABEL" = "Mensage";
+"MESSAGE_LABEL" = "Mensage";
 "AVAILABLE_LABEL" = "Llaves Disponibles";
 "KEY_LABEL" = "Llave";
 "VALUE_LABEL" = "Valor";
+"DESCRIPTION_LABEL" = "Descripcion";
 "DESCRIPTION_LABEL" = "Descripcion";

@@ -28,4 +28,12 @@ class LocalizedStringsFileTest: XCTestCase {
         let sut = LocalizedStringsFile(path: "MyPath", kv: [:], ruleViolations: [])
         XCTAssertEqual(sut.description, "file MyPath has 0 localizedStrings.")
     }
+    
+    func testEncode() throws {
+        let sut = LocalizedStringsFile(path: "MyPath", kv: [:], ruleViolations: [])
+        
+        let encoder = JSONEncoder()
+        XCTAssertNoThrow(try encoder.encode(sut))
+        XCTAssertNotNil(try encoder.encode(sut))
+    }
 }

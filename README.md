@@ -30,22 +30,27 @@ You can also install LocalizerLint by downloading `localizerlint.zip` from the
 
 	USAGE: localizerlint [<path>] [--search-duplicates-only] [--inclue-swift-ui] [--include-objective-c] [--brute-force] [--strict] [--verbose]
 
-ARGUMENTS	  | Usage
-------------|-------------------------------------------------------------
-\<path\>    | The root path of the project
+ARGUMENTS	    | Usage
+--------------|-------------------------------------------------------------
+`\<path\>`    | The root path of the project
 
->Note: If no **\<path\>** is provided the tool will use the current directory path
+>Note: If no `\<path\>` is provided the tool will use the current directory path
 
-Flags                     | Usage
---------------------------|-------------------------------------------------------------
---search-duplicates-only  | Search diplicate keys in Localized Strings files, ignoring any unused keys 
---inclue-swift-ui         | Enables analyzer for Localized Strings in SwiftUI Format 
---include-objective-c     | Enables analyzer for Localized Strings in Objective-C Format 
---brute-force             | Will validate againts all strings 
--s, --strict              | Treats warnings as erros 
--v, --verbose             | Shows details about the results of running Localizerlint 
+Flags                       | Usage                                                                      | Default
+----------------------------|----------------------------------------------------------------------------|---------
+`--search-duplicates-only`  | Search diplicate keys in Localized Strings files, ignoring any unused keys | `false`
+`--inclue-swift-ui`         | Enables analyzer for Localized Strings in SwiftUI Format                   | `false`
+`--include-objective-c`     | Enables analyzer for Localized Strings in Objective-C Format               | `false`
+`--brute-force`             | Will validate againts all strings                                          | `false`
+`--strict`                  | Treats warnings as erros                                                   | `false`
+`--reporter`                | Choose output reporter. Available: xcode, json                             | `xcode`
+`--verbose`			        | Shows details about the results of running Localizerlint                   |
 
->Note: **--brute-force** automatically disables **--inclue-swift-ui** and **--include-objective-c**
+>Notes:
+>
+>  `--brute-force` automatically disables `--inclue-swift-ui` and `--include-objective-c`.
+> 
+> If `--reporter` is set to `json`, the output file will be created at given `path`.
 
 ## Example
 
@@ -123,7 +128,7 @@ struct ContentView: View {
 
 ![add_build_phase](readme_files/xcode_build_phase.png)
 
-##### If using with **CocoaPods**
+##### If using with CocoaPods
 
 >${PODS_ROOT}/Localizerlint/localizerlint
 

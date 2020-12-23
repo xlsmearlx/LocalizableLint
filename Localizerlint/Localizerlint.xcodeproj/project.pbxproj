@@ -11,6 +11,9 @@
 		BA1630482588390F00066062 /* LocalizerlintFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BA16303A2588390F00066062 /* LocalizerlintFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA1630572588393A00066062 /* BuildLogTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1630562588393A00066062 /* BuildLogTest.swift */; };
 		BA16308025883D8200066062 /* FileReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16307F25883D8200066062 /* FileReaderTest.swift */; };
+		BA318BA52593ED60000B3971 /* JSONMakerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA318BA42593ED60000B3971 /* JSONMakerTest.swift */; };
+		BA318BAA2593EE0A000B3971 /* FileManager+TemporaryDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA318BA92593EE0A000B3971 /* FileManager+TemporaryDirectory.swift */; };
+		BA318BB02593F343000B3971 /* OutputTypeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA318BAF2593F343000B3971 /* OutputTypeError.swift */; };
 		BA66C0162589376300618B04 /* LocalizationStringsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0082589376300618B04 /* LocalizationStringsFile.swift */; };
 		BA66C0172589376300618B04 /* LocalizationCodeFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C0092589376300618B04 /* LocalizationCodeFile.swift */; };
 		BA66C0192589376300618B04 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C00C2589376300618B04 /* Logger.swift */; };
@@ -31,15 +34,17 @@
 		BA66C070258A5AFD00618B04 /* FilesContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA66C06F258A5AFD00618B04 /* FilesContents.swift */; };
 		BA6A35B4258BFA4400B5B52A /* RuleViolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A35B3258BFA4400B5B52A /* RuleViolation.swift */; };
 		BA6A35BA258BFA5700B5B52A /* RuleViolationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A35B9258BFA5700B5B52A /* RuleViolationType.swift */; };
-		BA6A35BE258BFA7800B5B52A /* FileViolationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A35BD258BFA7800B5B52A /* FileViolationTest.swift */; };
 		BA6A35C2258BFB1100B5B52A /* RuleViolationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A35C1258BFB1100B5B52A /* RuleViolationTest.swift */; };
 		BA6A35C6258BFBCB00B5B52A /* LocalizationCodeFileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A35C5258BFBCB00B5B52A /* LocalizationCodeFileTest.swift */; };
 		BA6A35CA258BFF4F00B5B52A /* LocalizedStringsFileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A35C9258BFF4F00B5B52A /* LocalizedStringsFileTest.swift */; };
+		BA6A35D9258C14EF00B5B52A /* JsonMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A35D8258C14EF00B5B52A /* JsonMaker.swift */; };
+		BA6A35DF258C14FA00B5B52A /* OutputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A35DE258C14FA00B5B52A /* OutputType.swift */; };
+		BA6A3640258FE4C400B5B52A /* LoggableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A363F258FE4C400B5B52A /* LoggableTest.swift */; };
+		BA6A3644258FE75300B5B52A /* OutputTypeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A3643258FE75300B5B52A /* OutputTypeTest.swift */; };
 		BA82E0102579EC800009853A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E00F2579EC800009853A /* main.swift */; };
 		BA82E023257A8FE30009853A /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = BA82E022257A8FE30009853A /* ArgumentParser */; };
 		BA9D95A1258ABA6E00A0B5B2 /* LocalizerlintFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1630382588390F00066062 /* LocalizerlintFramework.framework */; };
 		BA9D95A2258ABA6E00A0B5B2 /* LocalizerlintFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA1630382588390F00066062 /* LocalizerlintFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BA9D95E9258ADAA800A0B5B2 /* FileViolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9D95E8258ADAA800A0B5B2 /* FileViolation.swift */; };
 		BAFAB63B258BBC8E00C9A523 /* LocalizerlintError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB63A258BBC8E00C9A523 /* LocalizerlintError.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +96,9 @@
 		BA1630472588390F00066062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA1630562588393A00066062 /* BuildLogTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildLogTest.swift; sourceTree = "<group>"; };
 		BA16307F25883D8200066062 /* FileReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderTest.swift; sourceTree = "<group>"; };
+		BA318BA42593ED60000B3971 /* JSONMakerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMakerTest.swift; sourceTree = "<group>"; };
+		BA318BA92593EE0A000B3971 /* FileManager+TemporaryDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+TemporaryDirectory.swift"; sourceTree = "<group>"; };
+		BA318BAF2593F343000B3971 /* OutputTypeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTypeError.swift; sourceTree = "<group>"; };
 		BA66C0082589376300618B04 /* LocalizationStringsFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationStringsFile.swift; sourceTree = "<group>"; };
 		BA66C0092589376300618B04 /* LocalizationCodeFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationCodeFile.swift; sourceTree = "<group>"; };
 		BA66C00C2589376300618B04 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -111,13 +119,15 @@
 		BA66C06F258A5AFD00618B04 /* FilesContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesContents.swift; sourceTree = "<group>"; };
 		BA6A35B3258BFA4400B5B52A /* RuleViolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleViolation.swift; sourceTree = "<group>"; };
 		BA6A35B9258BFA5700B5B52A /* RuleViolationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleViolationType.swift; sourceTree = "<group>"; };
-		BA6A35BD258BFA7800B5B52A /* FileViolationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViolationTest.swift; sourceTree = "<group>"; };
 		BA6A35C1258BFB1100B5B52A /* RuleViolationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleViolationTest.swift; sourceTree = "<group>"; };
 		BA6A35C5258BFBCB00B5B52A /* LocalizationCodeFileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationCodeFileTest.swift; sourceTree = "<group>"; };
 		BA6A35C9258BFF4F00B5B52A /* LocalizedStringsFileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringsFileTest.swift; sourceTree = "<group>"; };
+		BA6A35D8258C14EF00B5B52A /* JsonMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonMaker.swift; sourceTree = "<group>"; };
+		BA6A35DE258C14FA00B5B52A /* OutputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputType.swift; sourceTree = "<group>"; };
+		BA6A363F258FE4C400B5B52A /* LoggableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggableTest.swift; sourceTree = "<group>"; };
+		BA6A3643258FE75300B5B52A /* OutputTypeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTypeTest.swift; sourceTree = "<group>"; };
 		BA82E00C2579EC7F0009853A /* Localizerlint */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Localizerlint; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA82E00F2579EC800009853A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		BA9D95E8258ADAA800A0B5B2 /* FileViolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileViolation.swift; sourceTree = "<group>"; };
 		BAFAB63A258BBC8E00C9A523 /* LocalizerlintError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizerlintError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				BA66C00F2589376300618B04 /* DirectoryHelper.swift */,
+				BA6A35D7258C14DE00B5B52A /* Reporters */,
 				BA66C0102589376300618B04 /* RegexEvaluator */,
 				BA66C032258938E600618B04 /* FileReader */,
 				BA66C03D25893DC700618B04 /* Source */,
@@ -167,19 +178,30 @@
 		BA1630442588390F00066062 /* LocalizerlintFrameworkTests */ = {
 			isa = PBXGroup;
 			children = (
+				BA318BA82593EDE8000B3971 /* Utils */,
 				BA66C06F258A5AFD00618B04 /* FilesContents.swift */,
+				BA318BA42593ED60000B3971 /* JSONMakerTest.swift */,
+				BA6A3643258FE75300B5B52A /* OutputTypeTest.swift */,
 				BA1630562588393A00066062 /* BuildLogTest.swift */,
+				BA6A363F258FE4C400B5B52A /* LoggableTest.swift */,
 				BA66C05D258987B200618B04 /* StringExtensionTest.swift */,
 				BA16307F25883D8200066062 /* FileReaderTest.swift */,
 				BA66C05525897C1300618B04 /* RegexEvaluatorTest.swift */,
 				BA66C0612589AA2900618B04 /* DirectoryHelperTest.swift */,
 				BA1630472588390F00066062 /* Info.plist */,
-				BA6A35BD258BFA7800B5B52A /* FileViolationTest.swift */,
 				BA6A35C1258BFB1100B5B52A /* RuleViolationTest.swift */,
 				BA6A35C5258BFBCB00B5B52A /* LocalizationCodeFileTest.swift */,
 				BA6A35C9258BFF4F00B5B52A /* LocalizedStringsFileTest.swift */,
 			);
 			path = LocalizerlintFrameworkTests;
+			sourceTree = "<group>";
+		};
+		BA318BA82593EDE8000B3971 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BA318BA92593EE0A000B3971 /* FileManager+TemporaryDirectory.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		BA66C00B2589376300618B04 /* Logger */ = {
@@ -223,7 +245,6 @@
 		BA66C03D25893DC700618B04 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				BA9D95E8258ADAA800A0B5B2 /* FileViolation.swift */,
 				BA6A35B3258BFA4400B5B52A /* RuleViolation.swift */,
 				BA6A35B9258BFA5700B5B52A /* RuleViolationType.swift */,
 				BA66C0092589376300618B04 /* LocalizationCodeFile.swift */,
@@ -238,6 +259,16 @@
 				BA66C0152589376300618B04 /* String+Whitespaces.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BA6A35D7258C14DE00B5B52A /* Reporters */ = {
+			isa = PBXGroup;
+			children = (
+				BA6A35D8258C14EF00B5B52A /* JsonMaker.swift */,
+				BA6A35DE258C14FA00B5B52A /* OutputType.swift */,
+				BA318BAF2593F343000B3971 /* OutputTypeError.swift */,
+			);
+			path = Reporters;
 			sourceTree = "<group>";
 		};
 		BA82E0032579EC7F0009853A = {
@@ -410,9 +441,9 @@
 			files = (
 				BA66C01B2589376300618B04 /* Loggable.swift in Sources */,
 				BA66C0212589376300618B04 /* String+Whitespaces.swift in Sources */,
-				BA9D95E9258ADAA800A0B5B2 /* FileViolation.swift in Sources */,
 				BA6A35B4258BFA4400B5B52A /* RuleViolation.swift in Sources */,
 				BA66C01C2589376300618B04 /* DirectoryHelper.swift in Sources */,
+				BA318BB02593F343000B3971 /* OutputTypeError.swift in Sources */,
 				BA66C0162589376300618B04 /* LocalizationStringsFile.swift in Sources */,
 				BA66C01A2589376300618B04 /* BuildLog.swift in Sources */,
 				BA66C01D2589376300618B04 /* RegexEvaluatorError.swift in Sources */,
@@ -424,6 +455,8 @@
 				BA66C034258938F200618B04 /* FileReaderOptions.swift in Sources */,
 				BA66C038258938FF00618B04 /* FileReaderError.swift in Sources */,
 				BA66C0192589376300618B04 /* Logger.swift in Sources */,
+				BA6A35DF258C14FA00B5B52A /* OutputType.swift in Sources */,
+				BA6A35D9258C14EF00B5B52A /* JsonMaker.swift in Sources */,
 				BA66C01E2589376300618B04 /* RegexEvaluator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,15 +465,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6A3640258FE4C400B5B52A /* LoggableTest.swift in Sources */,
 				BA6A35C2258BFB1100B5B52A /* RuleViolationTest.swift in Sources */,
 				BA66C0622589AA2900618B04 /* DirectoryHelperTest.swift in Sources */,
 				BA66C05E258987B200618B04 /* StringExtensionTest.swift in Sources */,
+				BA318BAA2593EE0A000B3971 /* FileManager+TemporaryDirectory.swift in Sources */,
 				BA16308025883D8200066062 /* FileReaderTest.swift in Sources */,
 				BA66C05625897C1300618B04 /* RegexEvaluatorTest.swift in Sources */,
+				BA6A3644258FE75300B5B52A /* OutputTypeTest.swift in Sources */,
 				BA1630572588393A00066062 /* BuildLogTest.swift in Sources */,
+				BA318BA52593ED60000B3971 /* JSONMakerTest.swift in Sources */,
 				BA6A35CA258BFF4F00B5B52A /* LocalizedStringsFileTest.swift in Sources */,
 				BA66C070258A5AFD00618B04 /* FilesContents.swift in Sources */,
-				BA6A35BE258BFA7800B5B52A /* FileViolationTest.swift in Sources */,
 				BA6A35C6258BFBCB00B5B52A /* LocalizationCodeFileTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

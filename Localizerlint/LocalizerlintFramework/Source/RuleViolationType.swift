@@ -12,6 +12,15 @@ public enum RuleViolationType {
     case duplicatedKey(key: String)
     case unusedKey(key: String)
     
+    public var isDuplicate: Bool {
+        switch self {
+        case .duplicatedKey:
+            return true
+        case .unusedKey:
+            return false
+        }
+    }
+    
     public var description: String {
         switch self {
         case .duplicatedKey(let key):
