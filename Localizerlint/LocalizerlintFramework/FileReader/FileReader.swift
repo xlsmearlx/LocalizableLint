@@ -108,41 +108,4 @@ public struct FileReader {
             return stringsFile
         }
     }
-    
-//    public static func evaluateDuplicatesAndUnusedKeys(codeFilePaths: [String],
-//                                                       localizedStringsFilePaths: [String],
-//                                                       options: FileReaderOptions) throws -> [LocalizedStringsFile] {
-//        let codeFiles = try localizedStringsInCode(filePaths: codeFilePaths, options: options)
-//        let allCodeFileKeys = Set(codeFiles.flatMap { $0.keys })
-//
-//        return try localizedStringsFilePaths.compactMap { stringsFilePath in
-//            let rawContent = try contentOfFile(atPath: stringsFilePath)
-//            let linesContent = rawContent.components(separatedBy: "\n")
-//            let sanitizedContent = rawContent.removingAllWhiteSpaces
-//            let kvMatches: RegexEvaluator.KeyValueMatch = try RegexEvaluator.matchFor(pattern: .localizedString, content: sanitizedContent)
-//            var ruleViolations = [RuleViolation]()
-//
-//            Logger.print(log: BuildLog(message: "Searching for duplicate keys in file: \(stringsFilePath)", type: .message))
-//
-//            let kv = zip(kvMatches.keys, kvMatches.values).reduce(into: [String: String]()) { results, keyValue in
-//                if results[keyValue.0] != nil {
-//                    ruleViolations.append(.init(lineNumber: linesContent.firstIndex(where: { $0.contains("\(keyValue.0)") }).map({ $0+1 }),
-//                                                type: .duplicatedKey(key: keyValue.0)))
-//                }
-//                results[keyValue.0] = keyValue.1
-//            }
-//
-//            let baseKeys = Set(kv.keys)
-//            let deadKeys = baseKeys.subtracting(allCodeFileKeys)
-//
-//            Logger.print(log: BuildLog(message: "KEYS: \(baseKeys.count) | DEADKEYS: \(deadKeys.count) | \(stringsFilePath)", type: .message))
-//
-//            deadKeys.forEach({ key in
-//                ruleViolations.append(.init(lineNumber: linesContent.firstIndex(where: { $0.contains("\(key)") }).map({ $0+1 }),
-//                                            type: .unusedKey(key: key)))
-//            })
-//
-//            return LocalizedStringsFile(path: stringsFilePath, kv: kv, ruleViolations: ruleViolations)
-//        }
-//    }
 }

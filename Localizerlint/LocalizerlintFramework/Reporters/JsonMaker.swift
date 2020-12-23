@@ -11,11 +11,9 @@ public struct JSONMaker {
     
     public init() { }
     
-    public func makeJSONFile(with files:[LocalizedStringsFile], at path: String) {
-        do {
+    public func makeJSONFile(with files:[LocalizedStringsFile], at path: String) throws {
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
             try FileManager.default.createFile(atPath: "\(path)LocalizerlintReport.json", contents: encoder.encode(files), attributes: .none)
-        } catch { print(error) }
     }
 }

@@ -27,4 +27,19 @@ class RuleViolationTest: XCTestCase {
         let sut = RuleViolation(lineNumber: 0, type: .unusedKey(key: "SOME_KEY"))
         XCTAssertEqual(sut.type.description, "SOME_KEY was defined but never used")
     }
+    
+    func testIsDuplicateValidation() {
+        let sutA = RuleViolation(lineNumber: 0, type: .duplicatedKey(key: "SOME_KEY"))
+        XCTAssertTrue(sutA.type.isDuplicate)
+        
+        let sutB = RuleViolation(lineNumber: 0, type: .unusedKey(key: "SOME_KEY"))
+        XCTAssertFalse(sutB.type.isDuplicate)
+    }
+    
+    func testEncode() throws {
+        let sut = RuleViolation(lineNumber: 0, type: .unusedKey(key: "SOME_KEY"))        
+        let encoder = JSONEncoder()
+        XCTAssertNoThrow(try encoder.encode(sut))
+        XCTAssertNotNil(try encoder.encode(sut))
+    }
 }

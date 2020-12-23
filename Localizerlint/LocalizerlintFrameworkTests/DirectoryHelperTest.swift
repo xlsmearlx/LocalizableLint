@@ -58,18 +58,3 @@ class DirectoryHelperTest: XCTestCase {
         XCTAssertEqual(sut!.executableFiles.count, 2)
     }
 }
-
-extension FileManager{
-    func createTemporaryDirectory(name: String) throws -> String {
-        let url = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(name, isDirectory: true)
-        try createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
-        print("Temporal Directory: \(url.path)")
-        return url.path
-    }
-    
-    func deleteTemporaryDirectory(name: String) throws {
-        let url = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(name, isDirectory: true)
-        try removeItem(at: url)
-        print("Deleted Temporal Directory: \(url.path)")
-    }
-}

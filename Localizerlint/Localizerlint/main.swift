@@ -9,41 +9,35 @@ import Foundation
 import ArgumentParser
 import LocalizerlintFramework
 
-CommandLine.arguments.append("/Users/slagunes/Developer/Localizerlint/SampleApp/")
-//CommandLine.arguments.append("--help")
-//CommandLine.arguments.append("--strict")
-//CommandLine.arguments.append("--ouput=xcode,json")
-CommandLine.arguments.append("--verbose")
-
 struct Localizerlint: ParsableCommand {
     @Argument(wrappedValue: "\(FileManager.default.currentDirectoryPath)/", help: "The root path of the project")
     var path: String
     
-    @Flag(help: "Search diplicate keys in Localized Strings files, ignoring any unused keys")
-    var searchDuplicatesOnly = false
+    @Flag(wrappedValue: false, help: "Search diplicate keys in Localized Strings files, ignoring any unused keys")
+    var searchDuplicatesOnly: Bool
     
-    @Flag(help: "Enables analyzer for Localized Strings in SwiftUI Format")
-    var inclueSwiftUI = false
+    @Flag(wrappedValue: false, help: "Enables analyzer for Localized Strings in SwiftUI Format")
+    var inclueSwiftUI: Bool
     
-    @Flag(help: "Enables analyzer for Localized Strings in Objective-C Format")
-    var includeObjectiveC = false
+    @Flag(wrappedValue: false, help: "Enables analyzer for Localized Strings in Objective-C Format")
+    var includeObjectiveC: Bool
     
-    @Flag(help: "Will validate againts all strings")
-    var bruteForce = false
+    @Flag(wrappedValue: false, help: "Will validate againts all strings")
+    var bruteForce: Bool
     
-    @Flag(name: .shortAndLong, help: "Treats warnings as erros")
-    var strict = false
+    @Flag(wrappedValue: false, name: .long, help: "Treats warnings as errors")
+    var strict: Bool
     
-    @Flag(name: .shortAndLong, help: "Enable debug logs")
-    var verbose = false
+    @Option(wrappedValue: .xcode, name: .long, help: "Choose output reporter. Available: xcode, json", transform: OutputType.init)
+    var reporter: OutputType
     
-    @Option(name: .shortAndLong, help: "Available output types: json", transform: OutputType.typesFromString)
-    var ouput: [OutputType] = [.xcode]
+    @Flag(wrappedValue: false, name: .long, help: "Enable debug logs")
+    var verbose: Bool
     
     mutating func run() throws {
         var options:FileReaderOptions = []
         var shouldAbort = false
-                
+        
         if bruteForce {
             options.update(with: .bruteForce)
         } else {
@@ -52,13 +46,16 @@ struct Localizerlint: ParsableCommand {
         }
         
         if verbose {
-            Logger.print(log: BuildLog(message: "Path: \(path)", type: .message))
-            Logger.print(log: BuildLog(message: "Brute force enabled: \(options.contains(.bruteForce))", type: .message))
-            Logger.print(log: BuildLog(message: "SwiftUI enabled: \(options.contains(.swiftui))", type: .message))
-            Logger.print(log: BuildLog(message: "Objective-C enabled: \(options.contains(.objectivec))", type: .message))
-            Logger.print(log: BuildLog(message: "Force enabled: \(strict)", type: .message))
-            Logger.print(log: BuildLog(message: "Ouput types: \(ouput)", type: .message))
-            Logger.print(log: BuildLog(message: "Verbose enabled: \(verbose)", type: .message))
+            Logger.print(log: BuildLog(message: "ARGUMENTS:", type: .message))
+            Logger.print(log: BuildLog(message: "<path>: \(path)", type: .message))
+            Logger.print(log: BuildLog(message: "OPTIONS:", type: .message))
+            Logger.print(log: BuildLog(message: "--search-duplicates-only: \(searchDuplicatesOnly)", type: .message))
+            Logger.print(log: BuildLog(message: "--inclue-swift-ui: \(options.contains(.swiftui))", type: .message))
+            Logger.print(log: BuildLog(message: "--include-objective-c: \(options.contains(.objectivec))", type: .message))
+            Logger.print(log: BuildLog(message: "--brute-force: \(options.contains(.bruteForce))", type: .message))
+            Logger.print(log: BuildLog(message: "--strict: \(strict)", type: .message))
+            Logger.print(log: BuildLog(message: "--reporter: \(reporter)", type: .message))
+            Logger.print(log: BuildLog(message: "--verbose: \(verbose)", type: .message))
         }
         
         guard let directory = DirectoryHelper(path: path, options: options) else { throw FileReaderError.unreadablePath(path) }
@@ -75,7 +72,7 @@ struct Localizerlint: ParsableCommand {
         if verbose {
             stringFiles.forEach({ Logger.print(log: BuildLog.init(message: $0.description, type: .message)) })
         }
-                
+        
         if !searchDuplicatesOnly {
             Logger.print(log: BuildLog(message: "Searching for unused keys", type: .message))
             
@@ -96,30 +93,38 @@ struct Localizerlint: ParsableCommand {
                     Logger.print(log: BuildLog(message: $0.description, type: .message))
                 })
             }
-                        
+            
             try FileReader.evaluateKeys(codeFiles: localizedKeysInCode,
                                         localizationFiles: &stringFiles,
-                                                          options: options)
+                                        options: options)
         }
         
-        
-        if ouput.contains(where: { $0 == .json }) {
-            JSONMaker().makeJSONFile(with: stringFiles, at: path)
-        }
-        
-        if ouput.contains(where: { $0 == .xcode }) {
+        switch reporter {
+        case .json:
+            try JSONMaker().makeJSONFile(with: stringFiles, at: path)
+        case .xcode:
             stringFiles.forEach({ file in
                 Logger.print(log: BuildLog(message: "\(file.path) violations \(file.ruleViolations)", type: .message))
                 file.ruleViolations.forEach { rule in
+                    var type: LogType
+                    
+                    if strict {
+                        type = .error
+                        shouldAbort = true
+                    } else {
+                        type = rule.type.isDuplicate ? .error : .warning
+                    }
+                    
                     Logger.print(log: BuildLog(file: file.path,
                                                line: rule.lineNumber,
                                                message: rule.type.description,
-                                               type: strict ? .error : .warning))
+                                               type: type))
                 }
-                
             })
+        default:
+            break
         }
-                
+        
         if strict && shouldAbort {
             Localizerlint.exit(withError: LocalizerlintError.strictModeEnabled)
         }

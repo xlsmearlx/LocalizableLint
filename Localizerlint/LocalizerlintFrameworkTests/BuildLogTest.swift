@@ -34,5 +34,4 @@ class BuildLogTest: XCTestCase {
         let sutWarning = BuildLog(message: "testMessage", type: .warning)
         XCTAssertEqual(sutWarning.description, "warning: testMessage")
     }
-
 }

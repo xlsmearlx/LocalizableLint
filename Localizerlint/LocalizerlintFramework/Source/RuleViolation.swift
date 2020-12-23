@@ -8,10 +8,12 @@
 import Foundation
 
 /// Container with the line and type of rule violation
-public struct RuleViolation: Encodable {
+public struct RuleViolation {
     public let lineNumber: Int?
     public let type: RuleViolationType
-    
+}
+
+extension RuleViolation: Encodable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(lineNumber, forKey: .line)
