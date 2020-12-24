@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Errors related to output files.
 enum OutputTypeError: Error {
     case OutputTypeNotSupported(type: String)
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Errors related to regular expressions
+/// Errors related to regular expressions.
 enum RegexEvaluatorError: Error {
     case invalidPattern(String)
 }

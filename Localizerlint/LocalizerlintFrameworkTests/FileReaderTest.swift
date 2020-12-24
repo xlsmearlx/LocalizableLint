@@ -87,7 +87,7 @@ class FileReaderTest: XCTestCase {
     func testEvaluateKeysShouldFoundTwoDeadKeys() throws {
         var localizableString = try FileReader.readFiles(filePaths: ["\(tmpDir!)/localized.strings"])
         let codefiles = try FileReader.localizedStringsInCode(filePaths: ["\(tmpDir!)/file.swift", "\(tmpDir!)/file.m"], options: [])
-        try FileReader.evaluateKeys(codeFiles: codefiles, localizationFiles: &localizableString, options: [])
+        try FileReader.evaluateKeys(codeFiles: codefiles, localizationFiles: &localizableString)
         XCTAssertEqual(localizableString[0].ruleViolations.count, 3)
         XCTAssertEqual(localizableString[0].path, "\(tmpDir!)/localized.strings")
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Patterns to be used by RegexEvaluator
+/// Patterns to be used by RegexEvaluator.
 enum RegexPattern {
     case bruteForce
     case swiftui

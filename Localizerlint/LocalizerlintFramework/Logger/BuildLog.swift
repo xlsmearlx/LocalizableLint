@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Container for information used by Xcode
+/// Container for information used by Xcode.
 public struct BuildLog: Loggable {
     public var file: String?
     public var line: Int?

@@ -9,9 +9,11 @@ import Foundation
 
 
 public struct FileReader {
-    /// Reads contents in path
-    /// - Parameter path: path of file
-    /// - Returns: content in file
+    
+    /// Reads contents in path.
+    /// - Parameter path: path of file.
+    /// - Throws: FileReaderError if the path is not valid.
+    /// - Returns: content in file.
     public static func contentOfFile(atPath path: String) throws -> String {
         guard let data = FileManager.default.contents(atPath: path),
               let content = String(data: data, encoding: .utf8) else {
@@ -24,9 +26,10 @@ public struct FileReader {
     
     /// Search the given Localization files paths and evaluates the content againts the desired pattern.
     /// - Parameters:
-    ///   - filePaths: The paths to the localization files (.strings)
-    ///   - options: Options that will set the type of patterns that the NSRegularExpression will use.
-    /// - Returns: A list of LocalizationCodeFile - contains path of file and all keys in it
+    ///   - filePaths: The paths to the localization files (.strings).
+    ///   - options: FileReaderOptions that will set the type of patterns that the NSRegularExpression will use.
+    /// - Throws: Error if the regular expression fails.
+    /// - Returns: A list of LocalizationCodeFile - contains path of file and all keys in it.
     public static func localizedStringsInCode(filePaths: [String], options: FileReaderOptions) throws -> [LocalizationCodeFile] {
         try filePaths.compactMap {
             let content = try contentOfFile(atPath: $0).removingAllWhiteSpaces
@@ -47,11 +50,11 @@ public struct FileReader {
             return matches.isEmpty ? nil : LocalizationCodeFile(path: $0, keys: Set(matches))
         }
     }
-    
-    /// Parses contents of a file to localizable keys and values - Throws error if localizable file have duplicated keys
-    /// - Parameters:
-    ///   - filePaths: Localizable file paths
-    /// - Returns: A list of LocalizedStringsFile - contains path of file and all keys in it
+        
+    /// Parses contents of a file to localizable keys and values.
+    /// - Parameter filePaths: Localizable file paths.
+    /// - Throws: Error if localizable file have duplicated keys.
+    /// - Returns: A list of LocalizedStringsFile - contains path of file and all keys in it.
     public static func readFiles(filePaths: [String]) throws -> [LocalizedStringsFile] {
         try filePaths.compactMap { path in
             let rawContent = try contentOfFile(atPath: path)
@@ -76,14 +79,13 @@ public struct FileReader {
         }
     }
     
-    /// Throws warning if keys exist in localizable file but are not being used
-    ///
+    /// Throws warning if keys exist in localizable file but are not being used.
     /// - Parameters:
-    ///   - codeFiles: Array of LocalizationCodeFile
-    ///   - localizationFiles: Array of LocalizableStringFiles
+    ///   - codeFiles: Array of LocalizationCodeFile.
+    ///   - localizationFiles: Array of LocalizableStringFiles.
+    /// - Throws: Error if the reader fails to load the content of the given paths.
     public static func evaluateKeys(codeFiles: [LocalizationCodeFile],
-                                    localizationFiles: inout [LocalizedStringsFile],
-                                    options: FileReaderOptions) throws {
+                                    localizationFiles: inout [LocalizedStringsFile]) throws {
         let allCodeFileKeys = Set(codeFiles.flatMap { $0.keys })
                 
         localizationFiles = try localizationFiles.map { stringsFile in

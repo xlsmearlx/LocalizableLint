@@ -95,8 +95,7 @@ struct Localizerlint: ParsableCommand {
             }
             
             try FileReader.evaluateKeys(codeFiles: localizedKeysInCode,
-                                        localizationFiles: &stringFiles,
-                                        options: options)
+                                        localizationFiles: &stringFiles)
         }
         
         switch reporter {

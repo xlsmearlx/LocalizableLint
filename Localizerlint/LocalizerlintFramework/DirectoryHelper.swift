@@ -11,9 +11,13 @@ public final class DirectoryHelper {
     var path: String
     var options: FileReaderOptions
     
-    /// List of files in currentPath - recursive
+    /// List of files in currentPath - recursive.
     var pathFiles: [String]
-
+    
+    /// Initializer for DirectoryHelper.
+    /// - Parameters:
+    ///   - path: The root path to search for files.
+    ///   - options: FileReaderOptions to determine file extensions.
     public init?(path: String, options: FileReaderOptions) {
         self.path = path
         self.options = options
@@ -27,13 +31,13 @@ public final class DirectoryHelper {
         self.pathFiles = files.map({path + $0})
     }
     
-    /// List of LocalizedStrings files - excluding files in the Pods
+    /// List of LocalizedStrings files - excluding files in the Pods.
     public var localizableFiles: [String] {
         Logger.print(log: BuildLog(message: "Searching for localization files", type: .message))
         return pathFiles.filter { $0.hasSuffix(".strings") && !$0.contains("Pods") }
     }
     
-    /// List of source files - excluding UnitTests files
+    /// List of source files - excluding UnitTests files.
     public var executableFiles: [String] {
         Logger.print(log: BuildLog(message: "Searching for source files", type: .message))
         return pathFiles.filter {

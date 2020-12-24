@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Errors related to reading files
+/// Errors related to reading files.
 public enum FileReaderError: Error {
     case unreadablePath(String)
 }

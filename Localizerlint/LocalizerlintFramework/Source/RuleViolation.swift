@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Container with the line and type of rule violation
+/// Container with the line and type of rule violation.
 public struct RuleViolation {
     public let lineNumber: Int?
     public let type: RuleViolationType

@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Types of logs that can be displayed in Xcode
+/// Types of logs that can be displayed in Xcode.
 public enum LogType: String {
     case warning = "warning: "
     case error = "error: "

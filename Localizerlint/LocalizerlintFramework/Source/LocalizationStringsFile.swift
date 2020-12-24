@@ -17,7 +17,7 @@ public struct LocalizedStringsFile {
         return Array(kv.keys)
     }
     
-    /// Friendly description with the file path and the localized strings
+    /// Friendly description with the file path and the localized strings.
     public var description: String {
         "file \(path) has \(keys.count) localizedStrings.\(!keys.isEmpty ? " \(keys)" : "")"
     }

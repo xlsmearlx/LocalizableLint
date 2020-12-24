@@ -10,10 +10,10 @@ import Foundation
 struct RegexEvaluator {
     typealias KeyValueMatch = (keys: [String], values: [String])
     
-    /// Creates an instance of NSRegularExpression with the given parttern
-    /// - Parameter pattern: RegexPattern to use
-    /// - Throws: An Error if the RegexPattern is not valid
-    /// - Returns: An instance of NSRegularExpression
+    /// Creates an instance of NSRegularExpression with the given parttern.
+    /// - Parameter pattern: RegexPattern to use.
+    /// - Throws: An Error if the RegexPattern is not valid.
+    /// - Returns: An instance of NSRegularExpression.
     private static func make(pattern: RegexPattern) throws -> NSRegularExpression {
         var regex: NSRegularExpression
         
@@ -26,12 +26,12 @@ struct RegexEvaluator {
         return regex
     }
     
-    /// Reads the content and finds all the pattern matches
+    /// Reads the content and finds all the pattern matches.
     /// - Parameters:
-    ///   - pattern: RegexPattern to use
-    ///   - content: content to match
-    /// - Throws: An Error if the RegexPattern is not valid
-    /// - Returns: An array of NSTextCheckingResult that matches that matches regex pattern from content
+    ///   - pattern: RegexPattern to use.
+    ///   - content: content to match.
+    /// - Throws: An Error if the RegexPattern is not valid.
+    /// - Returns:  An array of NSTextCheckingResult that matches that matches regex pattern from content.
     private static func matchesFor(pattern: RegexPattern, content: String) throws -> [NSTextCheckingResult] {
         let regex = try make(pattern: pattern)
         
@@ -40,11 +40,12 @@ struct RegexEvaluator {
                              range: .init(location: 0, length: content.utf16.count))
     }
     
-    /// Reads the content and finds all the pattern matches
+    /// Reads the content and finds all the pattern matches.
     /// - Parameters:
-    ///   - pattern: regex pattern
-    ///   - content: content to match
-    /// - Returns: Returns a list of strings that match regex pattern from content
+    ///   - pattern: regex pattern.
+    ///   - content: content to match.
+    /// - Throws: RegexEvaluatorError if pattern is not valid.
+    /// - Returns: A list of strings that match regex pattern from content.
     static func matchesFor(pattern: RegexPattern, content: String) throws -> [String] {
         let regexMatches: [NSTextCheckingResult] = try matchesFor(pattern: pattern, content: content)
         
@@ -53,11 +54,12 @@ struct RegexEvaluator {
         })
     }
     
-    /// Reads the content and finds all the pattern matches
+    /// Reads the content and finds all the pattern matches.
     /// - Parameters:
-    ///   - pattern: regex pattern
-    ///   - content: content to match
-    /// - Returns: Returns a tuple with all the keys and values that match regex pattern from content
+    ///   - pattern: regex pattern.
+    ///   - content: content to match.
+    /// - Throws: RegexEvaluatorError if pattern is not valid.
+    /// - Returns: KeyValueMatch with all the keys and values that match regex pattern from content.
     static func matchFor(pattern: RegexPattern, content: String) throws -> KeyValueMatch {
         let regexMatches: [NSTextCheckingResult] = try matchesFor(pattern: pattern, content: content)
         

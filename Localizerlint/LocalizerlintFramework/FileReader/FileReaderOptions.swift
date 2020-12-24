@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Options that will determine the behaviour of FileReader
+/// Options that will determine the behaviour of FileReader.
 public struct FileReaderOptions: OptionSet {
     public let rawValue: Int8
     

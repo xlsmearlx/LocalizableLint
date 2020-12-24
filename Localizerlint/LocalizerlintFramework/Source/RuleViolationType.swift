@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Warnings/Errors that can be found in localization files
+/// Warnings/Errors that can be found in localization files.
 public enum RuleViolationType {
     case duplicatedKey(key: String)
     case unusedKey(key: String)
